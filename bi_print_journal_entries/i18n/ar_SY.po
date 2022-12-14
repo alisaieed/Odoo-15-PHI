@@ -1,0 +1,513 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_print_journal_entries
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20220401\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-24 19:48+0000\n"
+"PO-Revision-Date: 2022-08-24 19:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,print_report_name:bi_print_journal_entries.fhl_invoice
+#: model:ir.actions.report,print_report_name:bi_print_journal_entries.lhc_invoice
+msgid "'Invoice'"
+msgstr "الفاتورة"
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,print_report_name:bi_print_journal_entries.journal_entry_report_id
+msgid "'Journal Entry'"
+msgstr "قيد اليومية"
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,print_report_name:bi_print_journal_entries.fhl_purchase_order
+#: model:ir.actions.report,print_report_name:bi_print_journal_entries.lhc_purchase_order
+msgid "'Purchase Order'"
+msgstr "طلب المشتريات"
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,print_report_name:bi_print_journal_entries.fhl_sale_order
+#: model:ir.actions.report,print_report_name:bi_print_journal_entries.lhc_sale_order
+msgid "'Sale Order'"
+msgstr "طلب المبيعات"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "<b>INVOICE REF:</b>"
+msgstr "<b>مرجع الفاتورة:</b>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid ""
+"<br/><br/>\n"
+"\t\t\t<b>INVOICE DATE:</b>"
+msgstr ""
+"<br/><br/>\n"
+"\t\t\t<b>تاريخ الفاتورة:</b>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">المبلغ</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">السعر الاجمالي</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                            <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">المبلغ</span>\n"
+"                            <span groups=\"account.group_show_line_subtotals_tax_included\">السعر الاجمالي</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "<span>Description</span>"
+msgstr "<span>الوصف</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "<span>Disc.%</span>"
+msgstr "<span>الخصم %</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "<span>Pro-Forma Invoice # </span>"
+msgstr "<span>فاتورة اولية # </span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "<span>Quantity</span>"
+msgstr "<span>الكمية</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "<span>Taxes</span>"
+msgstr "<span>الضريبة</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "<span>Unit Price</span>"
+msgstr "<span>سعر الوحدة</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">المجموع الفرعي</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid ""
+"<strong class=\"text-center\">Scan me with your banking "
+"app.</strong><br/><br/>"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "<strong>Amount Due</strong>"
+msgstr "<strong>المبلغ المستحق</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "<strong>Amount</strong>"
+msgstr "<strong>المبلغ</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "<strong>Date :</strong>"
+msgstr "<strong>التاريخ:</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "<strong>Description</strong>"
+msgstr "<strong>الوصف</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>ملاحظة الموقف المالي:</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "<strong>Incoterm: </strong>"
+msgstr "<strong>انكوترم: </strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "<strong>Journal :</strong>"
+msgstr "<strong>اليومية:</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "<strong>Journal Entry : </strong>"
+msgstr "<strong>قيد اليومية: </strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "<strong>Journal Entry</strong>"
+msgstr "<strong>قيد اليومية</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "<strong>Qty</strong>"
+msgstr "<strong>الكمية</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "<strong>Reference :</strong>"
+msgstr "<strong>المرجع:</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>عنوان الشحن:</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "<strong>Signature</strong>"
+msgstr "<strong>التوقيع</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "<strong>Taxes</strong>"
+msgstr "<strong>الضرائب</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "<strong>Total:</strong>"
+msgstr "<strong>المجموع:</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>سعر الوحدة</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "<strong>Vendor:</strong>"
+msgstr "<strong>المورد:</strong>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "Account"
+msgstr "الحساب"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "CUSTOMER"
+msgstr "العميل"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "CUSTOMER REFERENCE:"
+msgstr "مرجع العميل"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "Cancelled Purchase Order #"
+msgstr "امر الشراء الملغي"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "Country:"
+msgstr "البلد"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "Credit"
+msgstr "دائن"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "Customer Name:"
+msgstr "اسم العميل:"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "DELIVERY Contact"
+msgstr "عنوان التوصيل"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "Debit"
+msgstr "المدين"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "Description"
+msgstr "الوصف"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,name:bi_print_journal_entries.fhl_invoice
+msgid "Fitness and Health Invoice"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,name:bi_print_journal_entries.fhl_purchase_order
+msgid "Fitness and Health Purchase Order"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,name:bi_print_journal_entries.fhl_sale_order
+msgid "Fitness and Health Sale Order"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "INCOTERM"
+msgstr "انكوترم"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "INVOICE Contact"
+msgstr "عنوان الفوترة"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "INVOICE DUE DATE:"
+msgstr "تاريخ استحقاق الفاتورة"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "INVOICE RELATED:"
+msgstr "الفاتورة الاساسية"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.external_layout_boxed_fhl
+msgid "IRAQ - BAGHDAD - Karradeh, 42 St - +964 770 007 6088"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "Image"
+msgstr "الصورة"
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,name:bi_print_journal_entries.lhc_invoice
+msgid "LHC Invoice"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,name:bi_print_journal_entries.lhc_purchase_order
+msgid "LHC Purchase Order"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,name:bi_print_journal_entries.lhc_sale_order
+msgid "LHC Sale Order"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "Label"
+msgstr "التسمية"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "ORDER DATE"
+msgstr "تاريخ الطلب"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "Order #"
+msgstr "رقم الطلب"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "PAYMENT TERM"
+msgstr "شروط الدفع"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "PAYMENT TERM:"
+msgstr "شروط الدفع:"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.external_layout_boxed_fhl
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.external_layout_boxed_lhc
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "الصفحة: <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "Paid on"
+msgstr "دفع بتاريخ"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "Please use the following communication for your payment :"
+msgstr "الرجاء استخدام وسائل الاتصال التالية لدفعاتك:"
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,name:bi_print_journal_entries.journal_entry_report_id
+msgid "Print Journal Entries"
+msgstr "طباعة قيد اليومية"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "Purchase Order #"
+msgstr "رقم طلب الشراء"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "Purchase Representative"
+msgstr "مسؤول المشتريات"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "Quotation #"
+msgstr "# عرض السعر"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "REFERENCE"
+msgstr "المرجع"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.external_layout_boxed_fhl
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.external_layout_boxed_lhc
+msgid "Red dot"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_purchase_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_purchase_order_template_report_view
+msgid "Request for Quotation #"
+msgstr "عرض السعر #"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "SALE PERSON"
+msgstr "موظف المبيعات"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "Street:"
+msgstr "الشارع:"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "Taxes"
+msgstr "الضرائب"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.journal_entry_template_report_view
+msgid "Taxes(%)"
+msgstr "الضرائب"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fhl_sale_order_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_sale_order_template_report_view
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.fitness_invoice_template_report_view
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.lhc_invoice_template_report_view
+msgid "ZIP / City:"
+msgstr "الرمز البريدي / المدينة"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.external_layout_boxed_fhl
+msgid "info@fitnesshealth-iq.com"
+msgstr ""
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.external_layout_boxed_fhl
+msgid "www.fitnesshealth-iq.com"
+msgstr ""

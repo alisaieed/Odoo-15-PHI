@@ -1,0 +1,15 @@
+<odoo>
+  <record id="helpdesk_product_warranty" model="ir.actions.act_window">
+    <field name="name">Lots/Serial Numbers</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="view_id" ref="stock.view_production_lot_tree"/>
+    <field name="res_model">stock.production.lot</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+     <menuitem id="helpdesk_product_warranty_mnu" name="Warranty" action="helpdesk_product_warranty"
+              sequence="80" parent="product_warranty_axis.menu_helpdesk_root"
+               groups="product_warranty_axis.group_helpdesk_manager"
+              />
+
+</odoo>

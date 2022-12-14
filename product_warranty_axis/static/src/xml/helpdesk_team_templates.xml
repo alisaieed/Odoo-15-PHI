@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <!--
+        This template is the ribbon at the top of the helpdesk dashboard that adds
+        some figures to it. We call this rubbon the "HelpdeskDashboard".
+    -->
+
+    <t t-name="helpdesk.HelpdeskDashboard">
+        <div class="ticket-dashboard w-100">
+             <t t-set="demo_class" t-value="' '"/>
+                <t t-if="show_demo" >
+                    <div class="ribbon ribbon-top-right">
+                        <span class="o_recruitment_purple">Sample</span>
+                    </div>
+                    <t t-set="demo_class" t-value="' o_demo '"/>
+
+                    <t t-set="values['my_all']['count']" t-value="10"/>
+                    <t t-set="values['pending_ticket']['count']" t-value="20"/>
+                    <t t-set="values['my_high']['count']" t-value="3"/>
+                    <t t-set="values['my_urgent']['count']" t-value="2"/>
+                    <t t-set="values['my_low']['count']" t-value="7"/>
+                    <t t-set="values['my_medium']['count']" t-value="9"/>
+
+
+
+                    <t t-set="values['my_all']['hours']" t-value="30"/>
+                    <t t-set="values['my_high']['hours']" t-value="10"/>
+                    <t t-set="values['my_urgent']['hours']" t-value="15"/>
+
+
+                    <t t-set="values['my_all']['failed']" t-value="4"/>
+                    <t t-set="values['my_high']['failed']" t-value="2"/>
+                    <t t-set="values['my_urgent']['failed']" t-value="1"/>
+
+                    <t t-set="values['today']['count']" t-value="1"/>
+                    <t t-set="values['today']['rating']" t-value="50"/>
+                    <!-- <t t-set="values['today']['success']" t-value="50"/> -->
+
+                    <t t-set="values['7days']['count']" t-value="15"/>
+                    <t t-set="values['7days']['rating']" t-value="70"/>
+                    <!-- <t t-set="values['7days']['success']" t-value="80"/> -->
+                    <!-- <t t-set="values['month']['success']" t-value="80"/> -->
+
+
+                    <t t-set="values['helpdesk_target_rating']" t-value="80"/>
+                    <!-- <t t-set="values['helpdesk_target_success']" t-value="85"/> -->
+                    <t t-set="values['helpdesk_target_closed']" t-value="85"/>
+                </t>
+            <div class="w-100">
+                <div class="ticket-cards pt-5">
+                    <div class="row mx-0">
+                         <div class="col-md-4 mb-30">
+                            <div class="card h-100 border-0 customers_warranty_card position-relative">
+                                <div class="o_main o_dashboard_action" title="My All tickets"
+                                     name="product_warranty_axis.helpdesk_ticket_action_main_tree">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-white text-center">Customer Warranty Requests</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img class="img-fluid ticket-img"
+                                                     src="/product_warranty_axis/static/src/img/imgpsh_fullsize_anim.png" width="80"/>
+                                            </div>
+                                            <div class="col-xl-6 col-md-8">
+                                                <a class="text-white" href="#">
+                                                    <h2 class="card-text ticket-title text-white">
+                                                        <span class="count">
+                                                            <t t-esc="values['my_all_tickets']['count']"/>
+                                                        </span>
+                                                    </h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-4 mb-30">
+                            <div class="card h-100 border-0 product_warranty_card position-relative">
+                                <div class="o_main o_dashboard_action" title="My All tickets"
+                                     name="product_warranty_axis.helpdesk_product_warranty">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-white text-center">Product Warranty Requests</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img class="img-fluid ticket-img"
+                                                     src="/product_warranty_axis/static/src/img/imgpsh_fullsize_anim (1).png" width="80"/>
+                                            </div>
+                                            <div class="col-xl-6 col-md-8">
+                                                <a class="text-white" href="#">
+                                                    <h2 class="card-text ticket-title text-white">
+                                                        <span class="count">
+                                                            <t t-esc="values['my_all_tickets']['count']"/>
+                                                        </span>
+                                                    </h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-4 mb-30">
+                            <div class="card h-100 border-0 fixed_request_card position-relative">
+                                <div class="o_main o_dashboard_action" title="My All tickets"
+                                     name="product_warranty_axis.helpdesk_product_warranty">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-white text-center">Fixed Requests</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img class="img-fluid ticket-img"
+                                                     src="/product_warranty_axis/static/src/img/imgpsh_fullsize_anim (2).png" width="80"/>
+                                            </div>
+                                            <div class="col-xl-6 col-md-8">
+                                                <a class="text-white" href="#">
+                                                    <h2 class="card-text ticket-title text-white">
+                                                        <span class="count">
+                                                            <t t-esc="values['my_closed_tickets']['count']"/>
+                                                        </span>
+                                                    </h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-30">
+                            <div class="card h-100 border-0 open-tickets position-relative">
+                                <div class="o_main o_dashboard_action" title="My All tickets"
+                                     name="product_warranty_axis.helpdesk_my_ticket_action_no_create">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-white text-center">My Tickets</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img class="img-fluid ticket-img"
+                                                     src="/product_warranty_axis/static/src/img/open-tickets-img.png" width="80"/>
+                                            </div>
+                                            <div class="col-xl-6 col-md-8">
+                                                <a class="text-white" href="#">
+                                                    <h2 class="card-text ticket-title text-white">
+                                                        <span class="count">
+                                                            <t t-esc="values['my_all']['count']"/> 
+                                                        </span>
+                                                    </h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 mb-30">
+                            <div class="card h-100 border-0 close-tickets position-relative">
+                                <div class="o_main o_dashboard_action" title="My Closed tickets"
+                                     name="product_warranty_axis.helpdesk_ticket_action_close_analysis">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-white text-center">Closed Tickets</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img class="img-fluid ticket-img"
+                                                     src="/product_warranty_axis/static/src/img/close-tickets-img.png" width="80"/>
+                                            </div>
+                                            <div class="col-xl-6 col-md-8">
+                                                <h2 class="card-text ticket-title text-white">
+                                                    <span class="count">
+                                                        <t t-esc="values['helpdesk_target_closed']"/> 
+                                                    </span>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-md-3 mb-30">
+                            <div class="card h-100 border-0 pending-tickets position-relative">
+                                <div class="o_main o_dashboard_action" title="All tickets"
+                                    >
+                                    <div class="card-body">
+                                        <h4 class="card-title text-white text-center">Happy rating</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img class="img-fluid ticket-img"
+                                                     src="/product_warranty_axis/static/src/img/pending-tickets-img.png" width="80"/>
+                                            </div>
+                                            <div class="col-xl-6 col-md-8">
+                                                <h2 class="card-text ticket-title text-white">
+                                                    <span class="count">
+                                                    <t t-esc="values['today']['rating']"/> %
+                                                    </span>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-30">
+                            <div class="card h-100 border-0 success-tickets position-relative">
+                               <!--  <div t-if="success_rate_enable"
+                                     title="The success rate is based on the tickets which passed the SLA policies successfully."
+                                     t-att-class="(values and values['helpdesk_target_success'] and values['helpdesk_target_success'] &lt;= values['today']['success'])?'o_main':'o_secondary'"> -->
+                                   
+                                    <div class="card-body">
+                                        <h4 class="card-title text-white text-center">Success Rate</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img class="img-fluid ticket-img"
+                                                     src="/product_warranty_axis/static/src/img/success-rate-icn.png" width="55"/>
+                                            </div>
+                                            <div class="col-xl-6 col-md-8">
+                                               
+                                                    <h2 class="card-text ticket-title text-white">
+                                                        <spadn class="count">
+                                                         <t t-esc="values['today']['success']"/>% 
+                                                        </spadn>
+                                                    </h2>
+                                                
+                        
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                    
+                        </div>
+                    </div>
+                </div>
+                    <div class="row mx-0">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 overdue-tickets position-relative">
+                                <div class="card-body">
+                                    <h4 class="card-title text-dark text-center">Ticket Due Time</h4>
+                                    <div class="row m-0 pb-2">
+                                        <div class="col-md-10 col-9">                                   
+                                              <span class="text-dark">Overdue</span>
+                                        </div>
+                                        <div class="col-md-2 col-3 badges-col">
+                                         <span class="badge badge-primary count">
+
+                                                <span class="count">
+                                                <t t-esc="values['helpdesk_target_closed']"/> 
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 pb-2">
+                                        <div class="col-md-10 col-9">
+                                            <span class="text-dark">Today</span>
+                                        </div>
+                                        <div class="col-md-2 col-3 badges-col">
+                                            <span class="badge badge-danger count">
+
+                                                <span class="count">
+                                               <t t-esc="values['my_all']['count']"/> 
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 pb-2">
+                                        <div class="col-md-10 col-9">
+                                            <span class="text-dark">Yesterday</span>
+                                        </div>
+                                        <div class="col-md-2 col-3 badges-col">
+                                            <span class="badge badge-success count">
+                                                 <span class="count">
+                                                <t t-esc="values['today']['count']"/>  
+                                                </span>                       
+
+                                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 pb-2">
+                                        <div class="col-md-10 col-9">
+                                            <span class="text-dark">This Week</span>
+                                        </div>
+                                        <div class="col-md-2 col-3 badges-col">
+                                            <span class="badge badge-primary count"><span class="count">
+                                                     <t t-esc="values['7days']['count']"/> 
+                                                </span></span>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 pb-2">
+                                        <div class="col-md-10 col-9">
+                                            <span class="text-dark">This Month</span>
+                                        </div>
+                                        <div class="col-md-2 col-3 badges-col">
+                                            <span class="badge badge-primary count"><span class="count">
+                                                     <t t-esc="values['7days']['success']"/> 
+                                                </span></span>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0">
+                                        <div class="col-md-10 col-9">
+                                            <span class="text-dark">This Year</span>
+                                        </div>
+                                        <div class="col-md-2 col-3 badges-col">
+                                            <span class="badge badge-info count"><span class="count">
+                                                     <t t-esc="values['7days']['count']"/> 
+                                                </span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 priority">
+                            <div class="card h-100 border-0 priority-tickets position-relative">
+                                <div class="card-body text-center">
+                                    <h4 class="card-title text-dark pb-sm-4 pb-3 mb-sm-3">Priority</h4>
+                                    <div class="row" t-attf-class="#{show_demo ? 'o_demo' : ''}">
+
+                                        <div class="col-md-3 px-2">
+                                            <div class="o_main o_dashboard_action" title="My urgent tickets"
+                                                name="product_warranty_axis.helpdesk_my_ticket_action_no_create" context="{'search_default_priority': '3'}">
+                                                <div class="rounded-circle bg-urgent priority-count mx-auto position-relative">
+                                                    <h1 class="count position-absolute">
+                                                        <a class="text-white" href="#">
+                                                            <span class="o_highlight">
+                                                                <t t-esc="values['my_urgent']['count']"/> 
+                                                            </span>
+                                                        </a>
+                                                    </h1>
+
+                                                </div>
+                                                <h5 class="card-text text-dark pt-3">Urgent</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3 px-2">
+                                            <div class="o_main o_dashboard_action" title="My High tickets"
+                                                 name="product_warranty_axis.helpdesk_my_ticket_action_no_create" context="{'search_default_priority': '2'}">
+                                                <div class="rounded-circle bg-high priority-count mx-auto position-relative">
+                                                    <h1 class="count position-absolute">
+                                                        <a class="text-white" href="#">
+                                                            <span class="o_highlight">
+                                                                 <t t-esc="values['my_high']['count']"/>
+                                                            </span>
+                                                        </a>
+                                                    </h1>
+
+                                                </div>
+                                                <h5 class="card-text text-dark pt-3">High Priority</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3 px-2">
+                                            <div class="o_main o_dashboard_action" title="My Medium tickets"
+                                                  name="product_warranty_axis.helpdesk_my_ticket_action_no_create" context="{'search_default_priority': '1'}">
+                                                <div class="rounded-circle bg-medium priority-count mx-auto position-relative">
+                                                    <h1 class="count position-absolute">
+                                                        <a class="text-white" href="#">
+                                                            <span class="o_highlight">
+                                                             <t t-esc="values['my_medium']['count']"/>
+                                                            </span>
+                                                           
+                                                        </a>
+                                                    </h1>
+
+                                                </div>
+                                                <h5 class="card-text text-dark pt-3">Medium</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 px-2">
+                                            <div class="o_main o_dashboard_action" title="My Low tickets"
+                                                 name="product_warranty_axis.helpdesk_my_ticket_action_no_create" context="{'search_default_priority': '0'}">
+                                                <div class="rounded-circle bg-medium priority-count mx-auto position-relative">
+                                                    <h1 class="count position-absolute">
+                                                        <a class="text-white" href="#">
+                                                            <span class="o_highlight">
+                                                                <t t-esc="values['my_low']['count']"/> 
+                                                            </span>
+                                                         
+                                                        </a>
+                                                    </h1>
+
+                                                </div>
+                                                <h5 class="card-text text-dark pt-3">Low</h5>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                
+            </div>
+
+            <div t-if="show_demo" class="o_welcome_message">
+                <div class="o_welcome_image">
+                    <i class="fa fa-smile-o fa-5x" title="Welcome" role="img" aria-label="Welcome"></i>
+                </div>
+                <div class="o_welcome_content">
+                    <br/>
+                    <h4>
+                        <strong>Ready to boost your customer service?</strong>
+                    </h4>
+                    <h4>This dashboard will activate once you have created your first ticket.</h4>
+                    <t t-if="values['use_alias'] and values['alias_name'] and values['alias_domain']">
+                        <h4>Send an email to
+                            <strong>
+                                <a t-attf-href="mailto:#{values['alias_name']}@#{values['alias_domain']}"
+                                   class="o_inline_link"><t t-esc="values['alias_name']"/>@
+                                    <t t-esc="values['alias_domain']"/>
+                                </a>
+                            </strong>
+                            to create a ticket.
+                        </h4>
+                    </t>
+                </div>
+            </div>
+       </div>
+   </div>
+</t>
+</templates>

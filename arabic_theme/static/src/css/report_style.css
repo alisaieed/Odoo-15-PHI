@@ -1,0 +1,20 @@
+/* Arabic woff2, Arabic and English ttf*/
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/arabic_theme/static/src/fonts/Cairo.woff2') format('woff2'),
+  url('/arabic_theme/static/src/fonts/Cairo-Regular.ttf') format('truetype');
+}
+
+/* English woff2 */
+@font-face {
+  font-family: 'Cairo_latin';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/arabic_theme/static/src/fonts/Cairo_latin.woff2') format('woff2');
+}
+
+*{
+    font-family:'Cairo', 'Cairo_latin' !important;
+    }

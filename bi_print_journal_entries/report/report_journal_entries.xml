@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+	<record id="journal_entry_report_id" model="ir.actions.report">
+            <field name="name">Print Journal Entries</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_print_journal_entries.journal_entry_report_template_id</field>
+            <field name="report_file">bi_print_journal_entries.journal_entry_report_template_id</field>
+            <field name="print_report_name">'Journal Entry'</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+        </record>	
+							
+	<record id="fhl_invoice" model="ir.actions.report">
+            <field name="name">Fitness and Health Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_print_journal_entries.fitness_invoice_template_id</field>
+            <field name="report_file">bi_print_journal_entries.fitness_invoice_template_id</field>
+            <field name="print_report_name">'Invoice'</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+        </record>	
+
+	<record id="lhc_invoice" model="ir.actions.report">
+            <field name="name">LHC Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_print_journal_entries.lhc_invoice_template_id</field>
+            <field name="report_file">bi_print_journal_entries.lhc_invoice_template_id</field>
+            <field name="print_report_name">'Invoice'</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+        </record>	
+
+	<record id="fhl_sale_order" model="ir.actions.report">
+            <field name="name">Fitness and Health Sale Order</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_print_journal_entries.fhl_sale_order_template_id</field>
+            <field name="report_file">bi_print_journal_entries.fhl_sale_order_template_id</field>
+            <field name="print_report_name">'Sale Order'</field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field>
+        </record>
+
+	<record id="lhc_sale_order" model="ir.actions.report">
+            <field name="name">LHC Sale Order</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_print_journal_entries.lhc_sale_order_template_id</field>
+            <field name="report_file">bi_print_journal_entries.lhc_sale_order_template_id</field>
+            <field name="print_report_name">'Sale Order'</field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field>
+        </record>
+
+	<record id="fhl_purchase_order" model="ir.actions.report">
+            <field name="name">Fitness and Health Purchase Order</field>
+            <field name="model">purchase.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_print_journal_entries.fhl_purchase_order_template_id</field>
+            <field name="report_file">bi_print_journal_entries.fhl_purchase_order_template_id</field>
+            <field name="print_report_name">'Purchase Order'</field>
+            <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+            <field name="binding_type">report</field>
+        </record>
+
+	<record id="lhc_purchase_order" model="ir.actions.report">
+            <field name="name">LHC Purchase Order</field>
+            <field name="model">purchase.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bi_print_journal_entries.lhc_purchase_order_template_id</field>
+            <field name="report_file">bi_print_journal_entries.lhc_purchase_order_template_id</field>
+            <field name="print_report_name">'Purchase Order'</field>
+            <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

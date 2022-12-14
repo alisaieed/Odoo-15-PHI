@@ -1,0 +1,3785 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_warranty_axis
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-20 06:31+0000\n"
+"PO-Revision-Date: 2022-02-20 06:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_main_tree
+msgid " All Tickets"
+msgstr "جميع التذاكر"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_main_high
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_main_low
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_main_medium
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_main_urgent
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_pending_ticket
+msgid " Tickets"
+msgstr "تذاكر"
+
+#. module: product_warranty_axis
+#: model:mail.template,subject:product_warranty_axis.rating_ticket_request_email_template
+msgid ""
+"${object.company_id.name or object.user_id.company_id.name or 'Helpdesk'}: "
+"Service Rating Request"
+msgstr "طلب تقييم الخدمة"
+
+#. module: product_warranty_axis
+#: model:mail.template,subject:product_warranty_axis.new_ticket_request_email_template
+#: model:mail.template,subject:product_warranty_axis.solved_ticket_request_email_template
+msgid "${object.display_name}"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:digest.tip,tip_description:product_warranty_axis.digest_tip_helpdesk_0
+msgid "${record.alias_id.display_name}"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:digest.tip,tip_description:product_warranty_axis.digest_tip_helpdesk_0
+msgid "% else"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:digest.tip,tip_description:product_warranty_axis.digest_tip_helpdesk_0
+msgid "% endif"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:digest.tip,tip_description:product_warranty_axis.digest_tip_helpdesk_0
+msgid ""
+"% set record = object.env['helpdesk.team'].search([('alias_name', '!=', False)],limit=1)\n"
+"    <b class=\"tip_title\">Tip: Create tickets from incoming emails</b>\n"
+"    % if record and record.alias_domain"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "&amp;times;"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "1 star"
+msgstr "نجمة واحدة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "2 stars"
+msgstr "2 نجوم"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "3 stars"
+msgstr "3 نجوم"
+
+#. module: product_warranty_axis
+#: model:mail.template,body_html:product_warranty_axis.rating_ticket_request_email_template
+msgid ""
+"<?xml version=\"1.0\"?>\n"
+"<div>\n"
+"    % set access_token = object.rating_get_access_token()\n"
+"    % set partner = object.rating_get_partner_id()\n"
+"    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%; margin:0;\">\n"
+"    <tbody>\n"
+"        <tr><td valign=\"top\" style=\"font-size: 14px;\">\n"
+"            % if partner.name:\n"
+"                Hello ${partner.name},<br/>\n"
+"            % else:\n"
+"                Hello,<br/>\n"
+"            % endif\n"
+"            Please take a moment to rate our services related to the ticket \"<strong>${object.name}</strong>\"\n"
+"            % if object.rating_get_rated_partner_id().name:\n"
+"                assigned to <strong>${object.rating_get_rated_partner_id().name}</strong>.<br/>\n"
+"            % else:\n"
+"                .<br/>\n"
+"            % endif\n"
+"        </td></tr>\n"
+"        <tr><td style=\"text-align: center;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" summary=\"o_mail_notification\" style=\"width:100%; margin: 32px 0px 32px 0px;\">\n"
+"                <tr><td style=\"font-size: 14px;\">\n"
+"                    <strong>Tell us how you feel about our service</strong><br/>\n"
+"                    <span style=\"text-color: #888888\">(click on one of these smileys)</span>\n"
+"                </td></tr>\n"
+"                <tr><td style=\"font-size: 14px;\">\n"
+"                    <table style=\"width:100%;text-align:center;\">\n"
+"                        <tr>\n"
+"                            <td>\n"
+"                                <a href=\"/rate/${access_token}/5\">\n"
+"                                    <img alt=\"Satisfied\" src=\"/rating/static/src/img/rating_5.png\" title=\"Satisfied\"/>\n"
+"                                </a>\n"
+"                            </td>\n"
+"                            <td>\n"
+"                                <a href=\"/rate/${access_token}/3\">\n"
+"                                    <img alt=\"Not satisfied\" src=\"/rating/static/src/img/rating_3.png\" title=\"Not satisfied\"/>\n"
+"                                </a>\n"
+"                            </td>\n"
+"                            <td>\n"
+"                                <a href=\"/rate/${access_token}/1\">\n"
+"                                    <img alt=\"Highly Dissatisfied\" src=\"/rating/static/src/img/rating_1.png\" title=\"Highly Dissatisfied\"/>\n"
+"                                </a>\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </table>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td></tr>\n"
+"        <tr><td valign=\"top\" style=\"font-size: 14px;\">\n"
+"            We appreciate your feedback. It helps us to improve continuously.\n"
+"            <br/><span style=\"margin: 0px 0px 0px 0px; font-size: 12px; opacity: 0.5; color: #454748;\">This customer survey has been sent because your ticket has been moved to the stage <b>${object.stage_id.name}</b></span>\n"
+"        </td></tr>\n"
+"    </tbody>\n"
+"    </table>\n"
+"</div>\n"
+"        "
+msgstr ""
+
+#. module: product_warranty_axis
+#: model:mail.template,body_html:product_warranty_axis.solved_ticket_request_email_template
+msgid ""
+"<?xml version=\"1.0\"?>\n"
+"<div>\n"
+"    Dear ${object.sudo().partner_id.name or 'Madam/Sir'},<br/><br/>\n"
+"    This automatic message informs you that we have closed your ticket (reference ${object.id}).\n"
+"    We hope that the services provided have met your expectations.\n"
+"    If you have any more questions or comments, don't hesitate to reply to this e-mail to re-open your ticket.<br/><br/>\n"
+"    Thank you for your cooperation.<br/>\n"
+"    Kind regards,<br/><br/>\n"
+"    ${object.team_id.name or 'Helpdesk'} Team.\n"
+"</div>\n"
+"        "
+msgstr ""
+
+#. module: product_warranty_axis
+#: model:mail.template,body_html:product_warranty_axis.new_ticket_request_email_template
+msgid ""
+"<?xml version=\"1.0\"?>\n"
+"<div>\n"
+"    Dear ${object.sudo().partner_id.name or 'Madam/Sir'},<br/><br/>\n"
+"    Your request\n"
+"    % if object.get_portal_url():\n"
+"    <a href=\"/my/ticket/${object.id}/${object.access_token}\">${object.name}</a>\n"
+"    % endif\n"
+"    has been received and is being reviewed by our ${object.team_id.name or ''} team.\n"
+"    The reference of your ticket is ${object.id}.<br/><br/>\n"
+"\n"
+"    <div style=\"text-align: center; margin: 16px 0px 16px 0px;\">\n"
+"        <a style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;\" href=\"${object.get_portal_url()}\">View the ticket</a><br/>\n"
+"    </div>\n"
+"\n"
+"    To add additional comments, reply to this email.<br/><br/>\n"
+"\n"
+"    Thank you,<br/><br/>\n"
+"    ${object.team_id.name or 'Helpdesk'} Team.\n"
+"</div>\n"
+"        "
+msgstr ""
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid ""
+"<b>Stars</b> mark the <b>ticket priority</b>. You can change it directly "
+"from here!"
+msgstr "تحدد <b> النجوم </ b> <b> أولوية التذكرة </ b>. يمكنك تغييره مباشرة من هنا!"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.portal_helpdesk_ticket
+msgid "<em class=\"font-weight-normal text-muted\">Tickets in stage:</em>"
+msgstr "<em class=\"font-weight-normal text-muted\">التذاكر في المرحلة:</em>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "<em class=\"text-muted\"><small>No description</small></em>"
+msgstr "<em class=\"text-muted\"><small>بدون وصف</small></em>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form_success
+msgid ""
+"<i class=\"fa fa-check-circle fa-2x text-success\" role=\"img\" aria-"
+"label=\"Success\" title=\"Success\"/>"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_kanban
+msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_kanban
+msgid ""
+"<i class=\"fa fa-envelope-o\" title=\"Domain alias\" role=\"img\" aria-"
+"label=\"Domain alias\"/>&amp;nbsp;"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid ""
+"<i class=\"fa fa-lightbulb-o\" role=\"img\"/> Enable the External Email "
+"Servers feature in the General Settings and indicate an alias domain"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "<small class=\"text-right\">Status:</small>"
+msgstr "<small class=\"text-right\">حالة:</small>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid ""
+"<small>\n"
+"                    If the issue has been solved, you can close the request.\n"
+"                </small>"
+msgstr "<small>\n إذا تم حل المشكلة ، يمكنك إغلاق الطلب. \ n </small>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "<small><b>Close this ticket</b></small>"
+msgstr "<small><b>أغلق هذه التذكرة</b></small>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_kanban
+msgid ""
+"<span class=\"fa fa-clock-o\" title=\"Deadline\" role=\"img\" aria-"
+"label=\"Deadline\"/>"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.view_partner_form_inherit_helpdesk
+msgid "<span class=\"o_stat_text\"> Tickets</span>"
+msgstr "<span class=\"o_stat_text\"> تذاكر</span>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "<strong class=\"col-lg-2\">Assigned to</strong>"
+msgstr "<strong class=\"col-lg-2\">مخصص ل</strong>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "<strong class=\"col-lg-2\">Description</strong>"
+msgstr "<strong class=\"col-lg-2\">وصف</strong>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "<strong class=\"col-lg-2\">Managed by</strong>"
+msgstr "<strong class=\"col-lg-2\">اديرت من قبل</strong>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "<strong class=\"col-lg-2\">Reported by</strong>"
+msgstr "<strong class=\"col-lg-2\">تم عمل تقرير بواسطة</strong>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "<strong class=\"col-lg-2\">Reported on</strong>"
+msgstr "<strong class=\"col-lg-2\">ذكرت في</strong>"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__alias_defaults
+msgid ""
+"A Python dictionary that will be evaluated to provide default values when "
+"creating new records for this alias."
+msgstr ""
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__description
+msgid "About Team"
+msgstr "عن الفريق"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__access_warning
+msgid "Access warning"
+msgstr "تحذير الوصول"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__account_detail
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__move_line_ids
+msgid "Account"
+msgstr "حساب"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Account Invoice"
+msgstr "فاتورة الحساب"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_needaction
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__active
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__active
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__active
+msgid "Active"
+msgstr "نشيط"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.mail_activity_type_action_config_helpdesk
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_menu_config_activity_type
+msgid "Activity Types"
+msgstr "أنواع النشاط"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_stage_action
+msgid ""
+"Adapt your pipeline to your workflow and easily track the progress of your "
+"tickets."
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_stage_view_form
+msgid "Add a description..."
+msgstr "إضافة وصف..."
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid ""
+"Add columns to configure <b>stages for your tickets</b>.<br/><i>e.g. "
+"Awaiting Customer Feedback, Customer Followup, ...</i>"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_id
+msgid "Alias"
+msgstr "الاسم المستعار"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_contact
+msgid "Alias Contact Security"
+msgstr "الاسم المستعار جهة الاتصال الأمن"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_name
+msgid "Alias Name"
+msgstr "الاسم المستعار"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_domain
+msgid "Alias domain"
+msgstr "المجال المستعار"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_model_id
+msgid "Aliased Model"
+msgstr "نموذج مستعار"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla__priority__0
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_report_analysis__priority__0
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_ticket__priority__0
+#, python-format
+msgid "All"
+msgstr "الجميع"
+
+#. module: product_warranty_axis
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_ticket_menu_all
+msgid "All Tickets"
+msgstr "جميع التذاكر"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "All tickets"
+msgstr "جميع التذاكر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__allow_portal_ticket_closing
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Allow customers to close their tickets"
+msgstr "السماح للعملاء بإغلاق تذاكرهم"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid ""
+"Allow your customers to easily rate your services. Activate this option will"
+" add a default email template on non folded closing stages"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__is_self_assigned
+msgid "Am I assigned"
+msgstr "هل أنا مكلف"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "البند التحليلي"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "Applies To Stage"
+msgstr "ينطبق على المرحلة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "Apply on"
+msgstr "تقدم على"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_kanban
+msgid "Archive"
+msgstr "أرشيف"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis_closed
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "Are you sure you wish to proceed?"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Assign To Me"
+msgstr "خصص لي"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid "Assign the ticket to someone."
+msgstr "تخصيص التذكرة لشخص ما."
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk_ticket.py:0
+#, python-format
+msgid "Assign to me"
+msgstr "خصص لي"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Assigned"
+msgstr "تعيين"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__user_id
+msgid "Assigned To"
+msgstr "مخصص ل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__user_id
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Assigned to"
+msgstr "مخصص ل"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis_closed
+msgid "Assignee"
+msgstr "الوكيل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla__target_type__assigning
+msgid "Assigning Ticket"
+msgstr "تخصيص التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__assign_method
+msgid "Assignment Method"
+msgstr "طريقة التعيين"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_stage_view_form
+msgid ""
+"At each stage employees can block or make task/issue ready for next stage.\n"
+"                            You can define here labels that will be displayed for the state instead\n"
+"                            of the default labels."
+msgstr ""
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_attachment_count
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_stage__template_id
+msgid ""
+"Automated email sent to the ticket's customer when the ticket reaches this "
+"stage."
+msgstr ""
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__assign_method
+msgid ""
+"Automatic assignment method for new tickets:\n"
+"\tManually: manual\n"
+"\tRandomly: randomly but everyone gets the same amount\n"
+"\tBalanced: to the person with the least amount of open tickets"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.team_rating_progress_data
+msgid "Average"
+msgstr "متوسط"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.team_rating_progress_data
+msgid "Bad"
+msgstr "سيئة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_team__assign_method__balanced
+msgid "Balanced"
+msgstr "متوازن"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.summary_bar_chart
+msgid "Bar Chart"
+msgstr "شريط الرسم البياني"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.view_helpdesk_ticket_invoice_form
+msgid "Barcode Nomenclature"
+msgstr "تسمية الباركود"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk.py:0
+#: model:helpdesk.stage,legend_blocked:product_warranty_axis.stage_cancelled
+#: model:helpdesk.stage,legend_blocked:product_warranty_axis.stage_done
+#: model:helpdesk.stage,legend_blocked:product_warranty_axis.stage_in_progress
+#: model:helpdesk.stage,legend_blocked:product_warranty_axis.stage_new
+#: model:helpdesk.stage,legend_blocked:product_warranty_axis.stage_solved
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_1
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_10
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_11
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_12
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_13
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_14
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_15
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_16
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_17
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_18
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_19
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_2
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_3
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_4
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_5
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_6
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_7
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_8
+#: model:helpdesk.ticket,legend_blocked:product_warranty_axis.helpdesk_ticket_9
+#, python-format
+msgid "Blocked"
+msgstr "محظور"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__campaign_id
+msgid "Campaign"
+msgstr "الحملة الانتخابية"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.product_template_search_view_inherit
+msgid "Can be Warranty"
+msgstr "يمكن أن يكون الضمان"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_product_product__is_warranty
+#: model:ir.model.fields,field_description:product_warranty_axis.field_product_template__is_warranty
+msgid "Can be warranty"
+msgstr "يمكن أن يكون الضمان"
+
+#. module: product_warranty_axis
+#: model:helpdesk.stage,name:product_warranty_axis.stage_cancelled
+msgid "Cancelled"
+msgstr "ألغيت"
+
+#. module: product_warranty_axis
+#: model:ir.model.constraint,message:product_warranty_axis.constraint_helpdesk_team_not_portal_show_rating_if_not_use_rating
+msgid "Cannot show ratings in portal if not using them"
+msgstr "لا يمكن إظهار التصنيفات في البوابة إذا لم يتم استخدامها"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Channels"
+msgstr "القنوات"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.search_helpdesk_ticket_page
+msgid ""
+"Check status of previously opened tickets. We provide archives and history "
+"of all support your requests compare with responses."
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "City"
+msgstr "مدينة"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid "Click here to view this team's tickets."
+msgstr "انقر هنا لعرض تذاكر هذا الفريق."
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid ""
+"Click these cards to open their form view, or <b>drag &amp; drop</b> them "
+"through the different stages of this team."
+msgstr ""
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "Close"
+msgstr "يغلق"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__close_ticket
+msgid "Close Ticket"
+msgstr "إغلاق التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__close_date
+msgid "Close date"
+msgstr "تاريخ قريب"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "Close the ticket"
+msgstr "أغلق التذكرة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "Close ticket"
+msgstr "إغلاق التذكرة"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+#, python-format
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+msgid "Closed Ticket"
+msgstr "تذكرة مغلقة"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#, python-format
+msgid "Closed Tickets"
+msgstr "التذاكر المغلقة"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_7days_analysis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_close_analysis
+msgid "Closed Tickets Analysis"
+msgstr "تحليل التذاكر المغلقة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__closed_by_partner
+msgid "Closed by Partner"
+msgstr "مغلق من قبل الشريك"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__is_close
+msgid "Closing Stage"
+msgstr "مرحلة الختام"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_tag__color
+msgid "Color"
+msgstr "اللون"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__color
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__color
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__color
+msgid "Color Index"
+msgstr "مؤشر اللون"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__kanban_state_label
+msgid "Column Status"
+msgstr "حالة العمود"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__company_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__company_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__company_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__company_id
+msgid "Company"
+msgstr "شركة"
+
+#. module: product_warranty_axis
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_menu_config
+msgid "Configuration"
+msgstr "إعدادات"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Configure SLA Policies"
+msgstr "تكوين نُهج SLA"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Configure a custom domain"
+msgstr "تكوين مجال مخصص"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.action_upcoming_sla_fail_all_tickets
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_sla
+msgid "Congratulations!"
+msgstr "تهانينا!"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_res_partner
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Country"
+msgstr "دولة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_coupons
+msgid "Coupons"
+msgstr "كوبونات"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk_ticket_inherit.py:0
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+#, python-format
+msgid "Create Invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk_ticket_inherit.py:0
+#, python-format
+msgid "Create Repair"
+msgstr "إنشاء إصلاح"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk_ticket_inherit.py:0
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+#, python-format
+msgid "Create Task"
+msgstr "إنشاء مهمة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "Create Ticket"
+msgstr "إنشاء تذكرة"
+
+#. module: product_warranty_axis
+#: model:website.menu,name:product_warranty_axis.menu_partner_form
+msgid "Create Tickets"
+msgstr "إنشاء التذاكر"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.email_template_action_helpdesk
+msgid "Create a new template"
+msgstr "قم بإنشاء قالب جديد"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_sla_report_analysis_action
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_7days_analysis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_7dayssuccess
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_close_analysis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_dashboard
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_success
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_team_performance
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_team_analysis_action
+msgid "Create tickets to get statistics."
+msgstr "إنشاء تذاكر للحصول على الإحصائيات."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__create_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__create_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__create_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_tag__create_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__create_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__create_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__create_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_type__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__create_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__create_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__create_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_tag__create_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__create_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__create_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__create_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_type__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Creation Date"
+msgstr "تاريخ الإنشاء"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "Current stage of this ticket"
+msgstr "المرحلة الحالية من هذه التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_bounced_content
+msgid "Custom Bounced Message"
+msgstr "رسالة مرتدة مخصصة"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk_ticket.py:0
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__partner_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot__partner_id
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+#, python-format
+msgid "Customer"
+msgstr "عميل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_address
+msgid "Customer Address"
+msgstr "عنوان العميل"
+
+#. module: product_warranty_axis
+#: model:helpdesk.team,name:product_warranty_axis.helpdesk_team1
+msgid "Customer Care"
+msgstr "رعاية العميل"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk_ticket.py:0
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_email
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot__partner_email
+#, python-format
+msgid "Customer Email"
+msgstr "البريد الإلكتروني للعميل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot__partner_name
+msgid "Customer Name"
+msgstr "اسم الزبون"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_phone
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot__partner_phone
+msgid "Customer Phone"
+msgstr "هاتف العميل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__access_url
+msgid "Customer Portal URL"
+msgstr "عنوان URL لبوابة العميل"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk_ticket.py:0
+#, python-format
+msgid "Customer Tickets"
+msgstr "تذاكر العملاء"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/helpdesk_dashboard.js:0
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_menu_team_dashboard
+#, python-format
+msgid "Dashboard"
+msgstr "لوحة القيادة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla_status__reached_datetime
+msgid "Datetime at which the SLA stage was reached for the first time"
+msgstr "التاريخ والوقت الذي تم فيه الوصول إلى مرحلة SLA لأول مرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__sla_exceeded_days
+msgid "Day to reach SLA"
+msgstr "يوم للوصول إلى جيش تحرير السودان"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla_report_analysis__sla_exceeded_days
+msgid ""
+"Day to reach the stage of the SLA, without taking the working calendar into "
+"account"
+msgstr "يوم للوصول إلى مرحلة اتفاقية مستوى الخدمة (SLA) ، دون التطرق إلى تقويم العمل الحساب"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__time_days
+msgid "Days"
+msgstr "أيام"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla__time_days
+msgid "Days to reach given stage based on ticket creation date"
+msgstr "الأيام للوصول إلى مرحلة معينة بناءً على تاريخ إنشاء التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__deadline
+msgid "Deadline"
+msgstr "موعد التسليم"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_defaults
+msgid "Default Values"
+msgstr "قيم افتراضية"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_kanban
+msgid "Delete"
+msgstr "حذف"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__description
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__description
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.portal_helpdesk_ticket
+msgid "Description"
+msgstr "وصف"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Description for customer portal"
+msgstr "وصف بوابة العملاء"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "Description of the policy..."
+msgstr "وصف السياسة ..."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Description of the ticket..."
+msgstr "وصف التذكرة ..."
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_digest_digest
+msgid "Digest"
+msgstr "الملخص"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "Discard"
+msgstr "تجاهل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_account_analytic_line__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_digest_digest__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_tag__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_type__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_product_template__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_partner__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_users__display_name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__portal_show_rating
+msgid "Display Rating on Customer Portal"
+msgstr "عرض التقييم على بوابة العملاء"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/digest.py:0
+#, python-format
+msgid "Do not have access, skip this data for user's digest email"
+msgstr "ليس لديك حق الوصول ، تخطي هذه البيانات للبريد الإلكتروني لملخص المستخدم"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Documentation"
+msgstr "توثيق"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Documents"
+msgstr "وثائق"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__domain_user_ids
+msgid "Domain User"
+msgstr "مستخدم المجال"
+
+#. module: product_warranty_axis
+#: model:helpdesk.stage,name:product_warranty_axis.stage_done
+msgid "Done"
+msgstr "منجز"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_kanban
+msgid "Dropdown menu"
+msgstr "القائمة المنسدلة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.error_message
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.error_message_serial
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_error_message
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.registration_error_message
+msgid "ERROR !!"
+msgstr "خطأ !!"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_kanban
+msgid "Edit"
+msgstr "يحرر"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "Email"
+msgstr "بريد الالكتروني"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__template_id
+msgid "Email Template"
+msgstr "نموذج البريد الإلكتروني"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_alias
+msgid "Email alias"
+msgstr "الاسم المستعار للبريد الإلكتروني"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__email_cc
+msgid "Email cc"
+msgstr "البريد الإلكتروني نسخة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__email
+msgid "Email on Customer"
+msgstr "البريد الإلكتروني على العميل"
+
+#. module: product_warranty_axis
+#: model_terms:digest.tip,tip_description:product_warranty_axis.digest_tip_helpdesk_0
+msgid "Emails sent to"
+msgstr "تم إرسال رسائل البريد الإلكتروني إلى"
+
+#. module: product_warranty_axis
+#: model_terms:digest.tip,tip_description:product_warranty_axis.digest_tip_helpdesk_0
+msgid ""
+"Emails sent to a Helpdesk Team alias generate tickets in your pipeline."
+msgstr "رسائل البريد الإلكتروني المرسلة إلى الاسم المستعار لفريق مكتب المساعدة تنشئ تذاكر في خط الأنابيب الخاص بك."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_website_helpdesk_slides
+msgid "Enable eLearning"
+msgstr "تمكين التعليم الإلكتروني"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__end_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid ""
+"Enter a subject or title for this ticket.<br/><i>(e.g. Problem with "
+"installation, Wrong order, Can't understand bill, etc.)</i>"
+msgstr ""
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid "Enter the customer. Feel free to create it on the fly."
+msgstr "أدخل الزبون. لا تتردد في إنشائه بسرعة."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__exceeded_days
+msgid "Excedeed Working Days"
+msgstr "أيام عمل إكسيديد"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__exclude_stage_ids
+msgid "Exclude Stages"
+msgstr "استبعاد المراحل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_report_analysis__sla_status__failed
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_status__status__failed
+msgid "Failed"
+msgstr "باءت بالفشل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__sla_fail
+msgid "Failed SLA Policy"
+msgstr "نهج SLA الفاشل"
+
+#. module: product_warranty_axis
+#: model:ir.filters,name:product_warranty_axis.helpdesk_sla_report_analysis_filter_stage_failed
+msgid "Failed SLA Stage per Month"
+msgstr "مرحلة SLA الفاشلة في الشهر"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+msgid "Failed Ticket"
+msgstr "تذكرة فاشلة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__ticket_id
+msgid "First"
+msgstr "أولا"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+msgid "First Assignment Date"
+msgstr "تاريخ التعيين الأول"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__assign_date
+msgid "First assignment date"
+msgstr "تاريخ أول مهمة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__fold
+msgid "Folded in Kanban"
+msgstr "مطوية في كانبان"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid ""
+"Follow this team to automatically track the events associated to tickets of "
+"this team."
+msgstr "تابع هذا الفريق لتتبع الأحداث المرتبطة بتذاكر هذا الفريق."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_follower_ids
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_channel_ids
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_partner_ids
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Future Activities"
+msgstr "الأنشطة المستقبلية"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Get in touch with your website visitors"
+msgstr "تواصل مع زوار موقع الويب الخاص بك"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_ticket__kanban_state__done
+msgid "Green"
+msgstr "أخضر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__legend_done
+msgid "Green Kanban Label"
+msgstr "علامة كانبان الخضراء"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_ticket__kanban_state__normal
+msgid "Grey"
+msgstr "رمادي"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__legend_normal
+msgid "Grey Kanban Label"
+msgstr "لافتة جي راي"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis_closed
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Group By"
+msgstr "مجموعة من"
+
+#. module: product_warranty_axis
+#: model:mail.activity.type,name:product_warranty_axis.mail_act_helpdesk_handle
+msgid "Handle Ticket"
+msgstr "التعامل مع التذكرة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.team_rating_progress_data
+msgid "Happy"
+msgstr "سعيدة"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Happy rating"
+msgstr "تصنيف سعيد"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__has_external_mail_server
+msgid "Has External Mail Server"
+msgstr "لديه خادم بريد خارجي"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__sla_reached_late
+msgid "Has SLA reached late"
+msgstr "هل وصل جيش تحرير السودان متأخرًا"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_website_helpdesk_forum
+msgid "Help Center"
+msgstr "مركز المساعدة"
+
+#. module: product_warranty_axis
+#: model:ir.ui.menu,name:product_warranty_axis.menu_helpdesk_root
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.digest_digest_view_form
+msgid "Helpdesk"
+msgstr "مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_team_dashboard_action_main
+msgid "Helpdesk Dashboard"
+msgstr "لوحة معلومات مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_helpdesk_sla
+msgid "Helpdesk SLA Policies"
+msgstr "سياسات SLA لمكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_helpdesk_stage
+msgid "Helpdesk Stage"
+msgstr "مرحلة مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_helpdesk_tag
+msgid "Helpdesk Tags"
+msgstr "علامات مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_helpdesk_team
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__name
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__team_id
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_summary_form_view
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_tree
+msgid "Helpdesk Team"
+msgstr "فريق مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Helpdesk Team..."
+msgstr "فريق مكتب المساعدة ..."
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_team_action
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_team_menu
+msgid "Helpdesk Teams"
+msgstr "فرق مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Helpdesk Ticket"
+msgstr "تذكرة مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_graph_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_pivot_analysis
+msgid "Helpdesk Ticket Analysis"
+msgstr "تحليل تذاكر مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_helpdesk_ticket_invoice
+msgid "Helpdesk Ticket Invoice"
+msgstr "فاتورة تذكرة مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_helpdesk_ticket_type
+msgid "Helpdesk Ticket Type"
+msgstr "نوع تذكرة مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_graph_main
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_pivot_main
+msgid "Helpdesk Tickets"
+msgstr "تذاكر مكتب المساعدة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_calendar_analysis
+msgid "Helpdesk_calendar"
+msgstr "مكتب المساعدة"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+#, python-format
+msgid "High Priority"
+msgstr "ذا أهيمة عليا"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla__priority__2
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_report_analysis__priority__2
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_ticket__priority__2
+msgid "High priority"
+msgstr "ذا أهيمة عليا"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__time_hours
+msgid "Hours"
+msgstr "ساعات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla__time_hours
+msgid "Hours to reach given stage based on ticket creation date"
+msgstr "ساعات للوصول إلى مرحلة معينة بناءً على تاريخ إنشاء التذكرة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "How to assign newly created tickets to the right person"
+msgstr "كيفية تعيين التذاكر التي تم إنشاؤها حديثًا إلى الشخص المناسب"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_account_analytic_line__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_account_move_line__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_digest_digest__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_tag__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_type__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_product_template__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_partner__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_users__id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__alias_parent_thread_id
+msgid ""
+"ID of the parent record holding the alias (example: project holding the task"
+" creation alias)"
+msgstr "معرّف السجل الأصلي الذي يحمل الاسم المستعار (مثال: مشروع يحمل المهمة الاسم المستعار للإنشاء)"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى نشاط استثناء."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__message_needaction
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__message_unread
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__message_needaction
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__message_has_error
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__message_has_sms_error
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__message_has_error
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__closed_by_partner
+msgid ""
+"If checked, this means the ticket was closed through the customer portal by "
+"the customer."
+msgstr "إذا تم تحديده ، فهذا يعني أنه تم إغلاق التذكرة من خلال بوابة العميل بواسطة الزبون."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__alias_bounced_content
+msgid ""
+"If set, this content will automatically be sent out to unauthorized users "
+"instead of the default message."
+msgstr "في حالة التعيين ، سيتم إرسال هذا المحتوى تلقائيًا إلى المستخدمين غير المصرح لهم بدلاً من الرسالة الافتراضية."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_kanban
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_kanban
+msgid "In #{kanban_getcolorname(record.color.raw_value)}"
+msgstr ""
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__use_website_helpdesk_livechat
+msgid ""
+"In Channel: You can create a new ticket by typing /helpdesk [ticket title]. "
+"You can search ticket by typing /helpdesk_search [Keyword1],[Keyword2],."
+msgstr ""
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk.py:0
+#: model:helpdesk.stage,legend_normal:product_warranty_axis.stage_cancelled
+#: model:helpdesk.stage,legend_normal:product_warranty_axis.stage_done
+#: model:helpdesk.stage,legend_normal:product_warranty_axis.stage_in_progress
+#: model:helpdesk.stage,legend_normal:product_warranty_axis.stage_new
+#: model:helpdesk.stage,legend_normal:product_warranty_axis.stage_solved
+#: model:helpdesk.stage,name:product_warranty_axis.stage_in_progress
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_1
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_10
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_11
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_12
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_13
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_14
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_15
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_16
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_17
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_18
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_19
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_2
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_3
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_4
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_5
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_6
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_7
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_8
+#: model:helpdesk.ticket,legend_normal:product_warranty_axis.helpdesk_ticket_9
+#, python-format
+msgid "In Progress"
+msgstr "في تقدم"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Incoming emails create tickets"
+msgstr "رسائل البريد الإلكتروني الواردة إنشاء تذاكر"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid ""
+"Individuals to whom the tickets will be automatically assigned. Keep empty "
+"for everyone to be part of the team."
+msgstr "الأفراد الذين سيتم تخصيص التذاكر لهم تلقائيًا. ابق فارغا للجميع ليكونوا جزءًا من الفريق."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__invoice_number
+msgid "Invoice Number"
+msgstr "رقم الفاتورة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_is_follower
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__is_invoice
+msgid "Is Invoice"
+msgstr "فاتورة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__is_invoice_button
+msgid "Is Invoice Button"
+msgstr "زر الفاتورة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__is_repair_button
+msgid "Is Repair Button"
+msgstr "هو زر الإصلاح"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__is_task
+msgid "Is Task"
+msgstr "هي مهمة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__is_task_button
+msgid "Is Task Button"
+msgstr "هو زر المهمة"
+
+#. module: product_warranty_axis
+#: model:helpdesk.ticket.type,name:product_warranty_axis.type_incident
+msgid "Issue"
+msgstr "مشكلة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__journal_id
+msgid "Journal"
+msgstr "مجلة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__legend_blocked
+msgid "Kanban Blocked Explanation"
+msgstr "شرح كانبان الممنوع"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__legend_normal
+msgid "Kanban Ongoing Explanation"
+msgstr "شرح كانبان المستمر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__kanban_state
+msgid "Kanban State"
+msgstr "لافتة S عمودية"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__legend_done
+msgid "Kanban Valid Explanation"
+msgstr "شرح كانبان صحيحا"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_digest_digest__kpi_helpdesk_tickets_closed_value
+msgid "Kpi Helpdesk Tickets Closed Value"
+msgstr "تذاكر Kpi Helpdesk مغلقة القيمة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__name
+msgid "Lable"
+msgstr "لابل"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.team_rating_data
+msgid "Last 3 months"
+msgstr "آخر 3 أشهر"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.team_rating_data
+msgid "Last 30 days"
+msgstr "آخر 30 يومًا"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.team_rating_data
+msgid "Last 7 days"
+msgstr "اخر 7 ايام"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_account_analytic_line____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_digest_digest____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_tag____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_type____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_product_template____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_partner____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_users____last_update
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__date_last_stage_update
+#, python-format
+msgid "Last Stage Update"
+msgstr "آخر تحديث للمرحلة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__write_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__write_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__write_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_tag__write_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__write_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__write_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__write_uid
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__write_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__write_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__write_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_tag__write_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__write_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__write_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__write_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Last message is from customer"
+msgstr "الرسالة الأخيرة من العميل"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Last message is from support"
+msgstr "الرسالة الأخيرة من الدعم"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Late Activities"
+msgstr "الأنشطة المتأخرة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.team_rating_data
+msgid "Latest Feedbacks"
+msgstr "أحدث الاصداء"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid "Let's create your first ticket."
+msgstr "لنقم بإنشاء تذكرتك الأولى."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__email_cc
+msgid "List of cc from incoming emails."
+msgstr "قائمة نسخة من رسائل البريد الإلكتروني الواردة."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_website_helpdesk_livechat
+msgid "Live chat"
+msgstr "دردشة مباشرة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "اللوط/المسلسل"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_product_warranty
+msgid "Lots/Serial Numbers"
+msgstr "الكثير / الأرقام التسلسلية"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Low"
+msgstr "قليل"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Low Priority"
+msgstr "أولوية منخفضة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla__priority__1
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_report_analysis__priority__1
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_ticket__priority__1
+msgid "Low priority"
+msgstr "أولوية منخفضة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_main_attachment_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_sla_action
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_sla_action_main
+msgid ""
+"Make sure tickets are handled in a timely manner by using SLA Policies.<br>"
+msgstr "تأكد من التعامل مع التذاكر في الوقت المناسب باستخدام سياسات SLA. <br>"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_team__assign_method__manual
+msgid "Manually"
+msgstr "يدويا"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__medium_id
+#, python-format
+msgid "Medium"
+msgstr "متوسط"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Medium Priority"
+msgstr "أولوية متوسطة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_has_error
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tickets_followup
+msgid "Message and communication history"
+msgstr "تاريخ الرسائل والاتصال"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_ids
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__priority
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__priority
+msgid "Minimum Priority"
+msgstr "الحد الأدنى من الأولوية"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla__stage_id
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla_status__sla_stage_id
+msgid "Minimum stage a ticket needs to reach in order to satisfy this SLA."
+msgstr "الحد الأدنى من المرحلة التي يجب أن تصل إليها التذكرة من أجل تلبية اتفاقية مستوى الخدمة هذه."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__time_minutes
+msgid "Minutes"
+msgstr "الدقائق"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla__time_minutes
+msgid "Minutes to reach given stage based on ticket creation date"
+msgstr "دقائق للوصول إلى مرحلة معينة بناءً على تاريخ إنشاء التذكرة"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "My All tickets"
+msgstr "جميع التذاكر الخاصة بي"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "My Closed tickets"
+msgstr "تذاكري المغلقة"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "My High tickets"
+msgstr "تذاكر السامي الخاصة بي"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "My Low tickets"
+msgstr "التذاكر المنخفضة الخاصة بي"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "My Medium tickets"
+msgstr "تذاكر ميديوم"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+msgid "My Ticket"
+msgstr "تذكرتي"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_main_my
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_ticket_menu_my
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis_closed
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+#, python-format
+msgid "My Tickets"
+msgstr "تذاكري"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "My urgent tickets"
+msgstr "التذاكر العاجلة الخاصة بي"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk.py:0
+#: code:addons/product_warranty_axis/models/helpdesk.py:0
+#: model:helpdesk.stage,name:product_warranty_axis.stage_new
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Newest"
+msgstr "الأحدث"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_sla_action
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_sla_action_main
+msgid "No SLA policies found. Let's create one!"
+msgstr "لم يتم العثور على سياسات SLA. دعونا ننشئ واحدة!"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_sla_report_analysis_action
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_7days_analysis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_close_analysis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_success
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_team_performance
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_team_analysis_action
+msgid "No data yet !"
+msgstr "لا توجد بيانات حتى الآن!"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_7dayssuccess
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_dashboard
+msgid "No data yet!"
+msgstr "لا توجد بيانات حتى الآن!"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_stage_action
+msgid "No stages found. Let's create one!"
+msgstr "لم يتم العثور على مراحل. دعونا ننشئ واحدة!"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_tag_action
+msgid "No tags found. Let's create one!"
+msgstr "لم يتم العثور على علامات. دعونا ننشئ واحدة!"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_team_action
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_team_dashboard_action_main
+msgid "No teams found"
+msgstr "لم يتم العثور على فرق"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_my_ticket_action_no_create
+msgid "No tickets found"
+msgstr "لم يتم العثور على تذاكر"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_high
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_low
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_medium
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_my
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_tree
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_urgent
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_pending_ticket
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_team
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_unassigned
+msgid "No tickets found. Let's create one!"
+msgstr "لم يتم العثور على تذاكر. دعونا ننشئ واحدة!"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_type_action
+msgid "No types found. Let's create one!"
+msgstr "لم يتم العثور على أنواع. دعونا ننشئ واحدة!"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "None"
+msgstr "لا أحد"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_needaction_counter
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__attachment_number
+msgid "Number of Attachments"
+msgstr "عدد المرفقات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_ticket_count
+msgid "Number of closed tickets from the same partner"
+msgstr "عدد التذاكر المغلقة من نفس الشريك"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_has_error_counter
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__message_needaction_counter
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__message_has_error_counter
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__message_unread_counter
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_report_analysis__sla_status__ongoing
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_status__status__ongoing
+msgid "Ongoing"
+msgstr "جاري التنفيذ"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla__ticket_type_id
+msgid ""
+"Only apply the SLA to a specific ticket type. If left empty it will apply to"
+" all types."
+msgstr "قم بتطبيق اتفاقية مستوى الخدمة على نوع تذكرة معين فقط. إذا تُركت فارغة فسيتم تطبيقها على  كل الانواع."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla__tag_ids
+msgid ""
+"Only apply the SLA to tickets with specific tags. If left empty it will "
+"apply to all tags."
+msgstr "قم بتطبيق اتفاقية مستوى الخدمة على التذاكر ذات العلامات المحددة فقط. إذا تركت فارغة فسوف تنطبق على كافة العلامات."
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+#, python-format
+msgid "Open"
+msgstr "افتح"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+msgid "Open Tickets"
+msgstr "فتح التذاكر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__ticket_open_hours
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__open_hours
+msgid "Open Time (hours)"
+msgstr "وقت الفتح (ساعات)"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__alias_force_thread_id
+msgid ""
+"Optional ID of a thread (record) to which all incoming messages will be "
+"attached, even if they did not reply to it. If set, this will disable the "
+"creation of new records completely."
+msgstr "المرفقة ولو لم ترد عليها. في حالة الضبط ، سيؤدي ذلك إلى تعطيل إنشاء سجلات جديدة تمامًا."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.team_rating_page
+msgid "Our Customer Satisfaction"
+msgstr "إرضاء عملائنا"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.portal_my_home_menu_helpdesk
+msgid "Our Ratings"
+msgstr "تقييماتنا"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_summary_form_view
+msgid "Overall Tickets Status"
+msgstr "الحالة العامة للتذاكر"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_stage__legend_blocked
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__legend_blocked
+msgid ""
+"Override the default value displayed for the blocked state for kanban "
+"selection, when the task or issue is in that stage."
+msgstr "تجاوز القيمة الافتراضية المعروضة للحالة المحظورة لكانبان الاختيار ، عندما تكون المهمة أو القضية في تلك المرحلة."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_stage__legend_done
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__legend_done
+msgid ""
+"Override the default value displayed for the done state for kanban "
+"selection, when the task or issue is in that stage."
+msgstr "تجاوز القيمة الافتراضية المعروضة للحالة تم لكانبان الاختيار ، عندما تكون المهمة أو القضية في تلك المرحلة."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_stage__legend_normal
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__legend_normal
+msgid ""
+"Override the default value displayed for the normal state for kanban "
+"selection, when the task or issue is in that stage."
+msgstr "تجاوز القيمة الافتراضية المعروضة للحالة العادية لكانبان الاختيار ، عندما تكون المهمة أو القضية في تلك المرحلة."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_user_id
+msgid "Owner"
+msgstr "صاحب"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_parent_model_id
+msgid "Parent Model"
+msgstr "نموذج الوالدين"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_parent_thread_id
+msgid "Parent Record Thread ID"
+msgstr "معرف سلسلة سجل الأصل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__alias_parent_model_id
+msgid ""
+"Parent model holding the alias. The model holding the alias reference is not"
+" necessarily the model given by alias_model_id (example: project "
+"(parent_model) and task (model))"
+msgstr "نموذج الوالدين الذي يحمل الاسم المستعار. النموذج الذي يحمل مرجع الاسم المستعار ليس بالضرورة النموذج المقدم بواسطة alias_model_id (مثال: مشروع (parent_model) والمهمة (model))"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_city
+msgid "Partner City"
+msgstr "المدينة الشريكة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_country
+msgid "Partner Country"
+msgstr "الدولة الشريكة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_state
+msgid "Partner State"
+msgstr "الدولة الشريكة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_street2
+msgid "Partner Street2"
+msgstr "شارع الشريك 2"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__partner_zip
+msgid "Partner Zip"
+msgstr "شريك الرمز البريدي"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__invoice_payment_term_id
+msgid "Payment Terms"
+msgstr "شروط الدفع"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__rating_percentage_satisfaction
+msgid "Percentage of happy ratings"
+msgstr "النسبة المئوية للتقييمات السعيدة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Performance"
+msgstr "أداء"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_team_performance
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_graph_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_pivot_analysis
+msgid "Performance Analysis"
+msgstr "تحليل الأداء"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "Phone"
+msgstr "هاتف"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.summary_line_graph
+msgid "Pie Graph"
+msgstr "رسم بياني"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.error_message_serial
+msgid "Please check Product Serial number  or contact support team."
+msgstr "يرجى التحقق من الرقم التسلسلي للمنتج أو الاتصال بفريق الدعم."
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/helpdesk_dashboard.js:0
+#, python-format
+msgid "Please enter an integer value"
+msgstr "الرجاء إدخال قيمة عددية"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__alias_contact
+msgid ""
+"Policy to post a message on the document using the mailgateway.\n"
+"- everyone: everyone can post\n"
+"- partners: only authenticated partners\n"
+"- followers: only followers of the related document or members of following channels\n"
+msgstr "نهج لنشر رسالة على المستند باستخدام عبّارة البريد. \ n "
+"- الجميع: يمكن للجميع النشر \ n"
+"- الشركاء: الشركاء المصدق عليهم فقط \ n"
+"- المتابعون: فقط أتباع المستند ذي الصلة أو أعضاء القنوات التالية \ n"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__access_url
+msgid "Portal Access URL"
+msgstr "عنوان URL للوصول إلى المدخل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__price_unit
+msgid "Price"
+msgstr "السعر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket_invoice__price_unit
+msgid "Price at which the product is sold to customers."
+msgstr "السعر الذي يُباع به المنتج للعملاء."
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__priority
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+#, python-format
+msgid "Priority"
+msgstr "أفضلية"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_account_move_line__product_id_new
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__product
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__product_id
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "Product"
+msgstr "المنتوج"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_product_template
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Productivity &amp; Visibility"
+msgstr "الإنتاجية وأمبير. الرؤية"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__project_project_id
+msgid "Project"
+msgstr "المشروع"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Publish this team's ratings on your website"
+msgstr "انشر تقييمات هذا الفريق على موقع الويب الخاص بك"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__quantity
+msgid "Quantity"
+msgstr "كمية"
+
+#. module: product_warranty_axis
+#: model:helpdesk.ticket.type,name:product_warranty_axis.type_question
+msgid "Question"
+msgstr "سؤال"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Question and answer section on your website"
+msgstr "قسم الأسئلة والأجوبة على موقع الويب الخاص بك"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_team__assign_method__randomly
+msgid "Random"
+msgstr "عشوائي"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__rating_ids
+msgid "Rating"
+msgstr "تقييم"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__rating_avg
+msgid "Rating Average"
+msgstr "متوسط التصنيف"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__rating_last_feedback
+msgid "Rating Last Feedback"
+msgstr "تقييم آخر ملاحظات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__rating_last_image
+msgid "Rating Last Image"
+msgstr "تقييم الصورة الأخيرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__rating_last_value
+msgid "Rating Last Value"
+msgstr "تقييم آخر قيمة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__rating_percentage_satisfaction
+msgid "Rating Satisfaction"
+msgstr "الرضا عن التقييم"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__rating_count
+msgid "Rating count"
+msgstr "عدد التقييم"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__rating_ids
+msgid "Ratings"
+msgstr "التقييمات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_rating
+msgid "Ratings on tickets"
+msgstr "التقييمات على التذاكر"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "Reach In"
+msgstr "تصل"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "Reach Stage"
+msgstr "مرحلة الوصول"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_report_analysis__sla_status__reached
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_status__status__reached
+msgid "Reached"
+msgstr "وصل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__reached_datetime
+msgid "Reached Date"
+msgstr "تاريخ الوصول إليه"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla__target_type__stage
+msgid "Reaching Stage"
+msgstr "مرحلة الوصول"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk.py:0
+#: model:helpdesk.stage,legend_done:product_warranty_axis.stage_cancelled
+#: model:helpdesk.stage,legend_done:product_warranty_axis.stage_done
+#: model:helpdesk.stage,legend_done:product_warranty_axis.stage_in_progress
+#: model:helpdesk.stage,legend_done:product_warranty_axis.stage_new
+#: model:helpdesk.stage,legend_done:product_warranty_axis.stage_solved
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_1
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_10
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_11
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_12
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_13
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_14
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_15
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_16
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_17
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_18
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_19
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_2
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_3
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_4
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_5
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_6
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_7
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_8
+#: model:helpdesk.ticket,legend_done:product_warranty_axis.helpdesk_ticket_9
+#, python-format
+msgid "Ready"
+msgstr "مستعد"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Ready to boost your customer service?"
+msgstr "هل أنت جاهز لتعزيز خدمة العملاء؟"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__rating_last_feedback
+msgid "Reason of the rating"
+msgstr "سبب التصنيف"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.search_helpdesk_ticket_page
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "Rechercher"
+msgstr "للبحث"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__alias_force_thread_id
+msgid "Record Thread ID"
+msgstr "سجل معرف الموضوع"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Record timesheets on your tickets"
+msgstr "سجل الجداول الزمنية على التذاكر الخاصة بك"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_ticket__kanban_state__blocked
+msgid "Red"
+msgstr "أحمر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__legend_blocked
+msgid "Red Kanban Label"
+msgstr "علامة كانبان الحمراء"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.portal_helpdesk_ticket
+msgid "Ref"
+msgstr "المرجع"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_credit_notes
+msgid "Refunds"
+msgstr "المبالغ المعادة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__use_helpdesk_sale_timesheet
+msgid "Reinvoice the time spent on ticket through tasks."
+msgstr "أعد نطق الوقت الذي تقضيه في التذكرة من خلال المهام."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Reinvoice time to your customer through tasks"
+msgstr "أعد إرسال وقت إلى عميلك من خلال المهام"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__repair
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Repair"
+msgstr "بصلح"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_product_repairs
+msgid "Repairs"
+msgstr "إصلاحات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__activity_user_id
+msgid "Responsible User"
+msgstr "مستخدم مسؤول"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_kanban
+msgid "Restore"
+msgstr "يعيد"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_product_returns
+msgid "Returns"
+msgstr "عائدات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__sla_id
+msgid "SLA"
+msgstr "خس"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__sla_deadline
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__sla_deadline
+msgid "SLA Deadline"
+msgstr "الموعد النهائي لاتفاقية مستوى الخدمة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis_closed
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "SLA Failed"
+msgstr "فشل SLA"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_kanban
+msgid "SLA Issues"
+msgstr "قضايا جيش تحرير السودان"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_sla_action
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_sla_action_main
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_sla
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_sla_menu_main
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_tree
+msgid "SLA Policies"
+msgstr "نهج SLA"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "SLA Policy"
+msgstr "نهج SLA"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__description
+msgid "SLA Policy Description"
+msgstr "وصف نهج SLA"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__name
+msgid "SLA Policy Name"
+msgstr "اسم نهج SLA"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__sla_reached_datetime
+msgid "SLA Reached Date"
+msgstr "تاريخ الوصول إلى اتفاقية مستوى الخدمة (SLA)"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__sla_stage_id
+msgid "SLA Stage"
+msgstr "مرحلة جيش تحرير السودان"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__sla_status_ids
+msgid "SLA Status"
+msgstr "حالة جيش تحرير السودان"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_sla_report_analysis_action
+#: model:ir.model,name:product_warranty_axis.model_helpdesk_sla_report_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_graph
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_pivot
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+msgid "SLA Status Analysis"
+msgstr "تحليل حالة اتفاقية مستوى الخدمة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+msgid "SLA Status Deadline"
+msgstr "الموعد النهائي لحالة SLA"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__sla_status_failed
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+msgid "SLA Status Failed"
+msgstr "فشل حالة SLA"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+msgid "SLA Success"
+msgstr "نجاح جيش تحرير السودان"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+msgid "SLA in Progress"
+msgstr "اتفاقية مستوى الخدمة قيد التقدم"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__sla_ids
+msgid "SLAs"
+msgstr "اتفاقيات مستوى الخدمة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_has_sms_error
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Salesperson"
+msgstr "مندوب مبيعات"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Sample"
+msgstr "عينة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Save this page and refresh to activate the feature"
+msgstr "احفظ هذه الصفحة وقم بالتحديث لتنشيط الميزة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Save this page and refresh to activate the feature."
+msgstr "احفظ هذه الصفحة وقم بالتحديث لتنشيط الميزة."
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid "Save this ticket and the modifications you've made to it."
+msgstr "احفظ هذه التذكرة والتعديلات التي أجريتها عليها."
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Search <span class=\"nolabel\"> (in Content)</span>"
+msgstr "بحث <span class=\"nolabel\"> (in Content)</span>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_search
+msgid "Search SLA Policies"
+msgstr "البحث في سياسات SLA"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.search_helpdesk_ticket_page
+msgid "Search Status"
+msgstr "حالة البحث"
+
+#. module: product_warranty_axis
+#: model:website.menu,name:product_warranty_axis.menu_search_ticket
+msgid "Search Tickets"
+msgstr "تذاكر البحث"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Search in All"
+msgstr "بحث في الكل"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Search in Customer"
+msgstr "البحث في العملاء"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Search in Messages"
+msgstr "ابحث في الرسائل"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Search in Reference"
+msgstr "البحث في المرجع"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Search in Stage"
+msgstr "ابحث في المرحلة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__access_token
+msgid "Security Token"
+msgstr "رمز الأمان"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_kanban
+msgid "See Customer Satisfaction"
+msgstr "انظر رضا العملاء"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Self-Service"
+msgstr "خدمة ذاتية، إخدم نفسك بنفسك"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Sell &amp; Track Hours"
+msgstr "بيع & amp؛ ساعات المسار"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Send an email to"
+msgstr "إرسال بريد إلكتروني إلى"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Send emails to"
+msgstr "إرسال رسائل البريد الإلكتروني إلى"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Send emails to:"
+msgstr "إرسال رسائل بريد إلكتروني إلى:"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__sequence
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__sequence
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_type__sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__serial_number
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "Serial Number"
+msgstr "رقم سري"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Set the calendar used to compute SLA target"
+msgstr "قم بتعيين التقويم المستخدم لحساب هدف SLA"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Set up your Service Level Agreements to track performance"
+msgstr "قم بإعداد اتفاقيات مستوى الخدمة الخاصة بك لتتبع الأداء"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_kanban
+msgid "Settings"
+msgstr "إعدادات"
+
+#. module: product_warranty_axis
+#: model:ir.actions.server,name:product_warranty_axis.model_helpdesk_ticket_action_share
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_kanban
+msgid "Share"
+msgstr "يشارك"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Share presentation and videos, and organize into courses"
+msgstr "شارك العروض التقديمية ومقاطع الفيديو ، ونظمها في دورات"
+
+#. module: product_warranty_axis
+#: model:res.groups,name:product_warranty_axis.group_use_sla
+msgid "Show SLA Policies"
+msgstr "إظهار نُهج SLA"
+
+#. module: product_warranty_axis
+#: model:website.menu,name:product_warranty_axis.menu_show_ticket
+msgid "Show Tickets"
+msgstr "إظهار التذاكر"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Show all records which has next action date is before today"
+msgstr "إظهار كافة السجلات التي لها تاريخ الإجراء التالي قبل اليوم"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__sla_id
+msgid "Sla"
+msgstr "خس"
+
+#. module: product_warranty_axis
+#: model:helpdesk.stage,name:product_warranty_axis.stage_solved
+msgid "Solved"
+msgstr "تم حلها"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__source_id
+msgid "Source"
+msgstr "مصدر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_stage__team_ids
+msgid ""
+"Specific team that uses this stage. Other teams will not be able to see or "
+"use this stage."
+msgstr "فريق محدد يستخدم هذه المرحلة. لن تتمكن الفرق الأخرى من رؤية أو استخدم هذه المرحلة."
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__stage_id
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_stage_view_tree
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.portal_helpdesk_ticket
+#, python-format
+msgid "Stage"
+msgstr "منصة"
+
+#. module: product_warranty_axis
+#: model:mail.message.subtype,description:product_warranty_axis.mt_ticket_stage
+#: model:mail.message.subtype,name:product_warranty_axis.mt_ticket_stage
+msgid "Stage Changed"
+msgstr "تغيرت المرحلة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_stage_view_form
+msgid "Stage Description and Tooltips"
+msgstr "وصف المرحلة وتلميحات الأدوات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__name
+msgid "Stage Name"
+msgstr "اسم المرحلة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_stage_view_form
+msgid "Stage Search"
+msgstr "بحث المرحلة"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_stage_action
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__stage_ids
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_stage_menu
+msgid "Stages"
+msgstr "مراحل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__stage_ids
+msgid ""
+"Stages the team will use. This team's tickets will only be able to be in "
+"these stages."
+msgstr "المراحل التي سيستخدمها الفريق. يمكن أن تكون تذاكر هذا الفريق فقط في "
+"هذه المراحل."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__start_date
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "State"
+msgstr "حالة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__sla_status
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__status
+msgid "Status"
+msgstr "حالة"
+
+#. module: product_warranty_axis
+#: model:ir.filters,name:product_warranty_axis.helpdesk_sla_report_analysis_filter_status_per_deadline
+msgid "Status Per Deadline"
+msgstr "الحالة في الموعد النهائي"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "الحالة على أساس الأنشطة \ n"
+"متأخر: تاريخ الاستحقاق فات بالفعل \ n"
+"اليوم: تاريخ النشاط هو اليوم \ n"
+"مخطط لها: الأنشطة المستقبلية."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__stock_location
+msgid "Stock Location"
+msgstr "موقع المخزون"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Street 2..."
+msgstr "شارع 2 ..."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Street..."
+msgstr "شارع..."
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__name
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+#, python-format
+msgid "Subject"
+msgstr "موضوعات"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Subject..."
+msgstr "موضوعات..."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "Submit tickets with an online form"
+msgstr "إرسال التذاكر مع نموذج عبر الإنترنت"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Success Rate"
+msgstr "معدل النجاح"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_7dayssuccess
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_success
+msgid "Success Rate Analysis"
+msgstr "تحليل معدل النجاح"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__sla_success
+msgid "Success SLA Policy"
+msgstr "نجاح نهج SLA"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_summary
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_sumary_view
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_summary_form_view
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "Summary"
+msgstr "ملخص"
+
+#. module: product_warranty_axis
+#: model:res.groups,name:product_warranty_axis.group_helpdesk_admin
+msgid "Support Admin"
+msgstr "مسؤول الدعم"
+
+#. module: product_warranty_axis
+#: model:res.groups,name:product_warranty_axis.group_helpdesk_manager
+msgid "Support Manager"
+msgstr "مدير الدعم"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tag_view_tree
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_type_view_tree
+msgid "Tag"
+msgstr "بطاقة شعار"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_tag__name
+msgid "Tag Name"
+msgstr "اسم العلامة"
+
+#. module: product_warranty_axis
+#: model:ir.model.constraint,message:product_warranty_axis.constraint_helpdesk_tag_name_uniq
+msgid "Tag name already exists !"
+msgstr "اسم العلامة موجود بالفعل!"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__tag_ids
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__tag_ids
+msgid "Tags"
+msgstr "العلامات"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_tag_action
+msgid "Tags are perfect to organize your tickets."
+msgstr "العلامات مثالية لتنظيم التذاكر الخاصة بك."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "Target"
+msgstr "استهداف"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_users__helpdesk_target_rating
+msgid "Target Customer Rating"
+msgstr "تصنيف العميل المستهدف"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__stage_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__sla_stage_id
+msgid "Target Stage"
+msgstr "المرحلة المستهدفة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_users__helpdesk_target_success
+msgid "Target Success Rate"
+msgstr "معدل النجاح المستهدف"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_users__helpdesk_target_closed
+msgid "Target Tickets to Close"
+msgstr "تذاكر الهدف لإغلاق"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__target_type
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__target_type
+msgid "Target Type"
+msgstr "نوع الهدف"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Task"
+msgstr "مهمة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_stage_view_form
+msgid "Task in progress. Click to block or set as done."
+msgstr "المهمة قيد التقدم. انقر للحظر أو التعيين كما تم."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_stage_view_form
+msgid "Task is blocked. Click to unblock or set as done."
+msgstr "تم حظر المهمة. انقر لإلغاء الحظر أو تعيينه كما تم."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_invoice__tax
+msgid "Tax"
+msgstr "ضريبة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__team_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__team_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_stage__team_ids
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis_closed
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Team"
+msgstr "فريق"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.summary_team_graph
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_summary_form_view
+msgid "Team Graph"
+msgstr "فريق الرسم البياني"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__member_ids
+msgid "Team Members"
+msgstr "أعضاء الفريق"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__visibility_member_ids
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid ""
+"Team Members to whom this team will be visible. Keep empty for everyone to "
+"see this team."
+msgstr "أعضاء الفريق الذين سيكون هذا الفريق مرئيًا لهم. ابق فارغة للجميع "
+"انظر هذا الفريق."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_search
+msgid "Team Search"
+msgstr "بحث الفريق"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__visibility_member_ids
+msgid "Team Visibility"
+msgstr "رؤية الفريق"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_team_action
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_team_dashboard_action_main
+msgid ""
+"Teams regroup tickets for people sharing the same expertise or from the same"
+" area."
+msgstr ""تعيد الفرق تجميع التذاكر للأشخاص الذين يتشاركون نفس الخبرة أو من نفس الخبرة"
+" مساحة.""
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.email_template_action_helpdesk
+msgid "Templates"
+msgstr "القوالب"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form_success
+msgid ""
+"Thank you for submitting your issue, our team will get right on\n"
+"                                it!"
+msgstr "شكرًا لك على إرسال مشكلتك ، وسيتواصل فريقنا على الفور \ n "
+"                                هو - هي!"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla__exclude_stage_ids
+msgid ""
+"The amount of time the ticket spends in this stage will not be taken into "
+"account when evaluating the status of the SLA Policy."
+msgstr "مقدار الوقت الذي تقضيه التذكرة في هذه المرحلة لن يؤخذ في الاعتبار "
+"عند تقييم حالة سياسة SLA."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__sla_deadline
+msgid "The closest deadline of all SLA applied on this ticket"
+msgstr "أقرب موعد نهائي لجميع اتفاقيات مستوى الخدمة المطبقة على هذه التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__alias_model_id
+msgid ""
+"The model (Odoo Document Kind) to which this alias corresponds. Any incoming"
+" email that does not reply to an existing record will cause the creation of "
+"a new record of this model (e.g. a Project Task)"
+msgstr "النموذج (Odoo Document Kind) الذي يتوافق معه هذا الاسم المستعار. أي وارد "
+"البريد الإلكتروني الذي لا يرد على سجل موجود سيؤدي إلى إنشاء"
+"سجل جديد لهذا النموذج (مثل مهمة المشروع)"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__alias_name
+msgid ""
+"The name of the email alias, e.g. 'jobs' if you want to catch emails for "
+"<jobs@example.odoo.com>"
+msgstr "اسم الاسم المستعار للبريد الإلكتروني ، على سبيل المثال "وظائف" إذا كنت تريد تلقي رسائل البريد الإلكتروني الخاصة بـ "
+"<jobs@example.odoo.com>"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__alias_user_id
+msgid ""
+"The owner of records created upon receiving emails on this alias. If this "
+"field is not set the system will attempt to find the right owner based on "
+"the sender (From) address, or will use the Administrator account if no "
+"system user is found for that address."
+msgstr "مالك السجلات التي تم إنشاؤها عند تلقي رسائل البريد الإلكتروني على هذا الاسم المستعار. اذا هذا "
+"لم يتم تعيين الحقل ، سيحاول النظام العثور على المالك الصحيح بناءً على"
+"عنوان المرسل (من) ، أو سيستخدم حساب المسؤول إذا لم يكن كذلك"
+"تم العثور على مستخدم النظام لهذا العنوان."
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "The team does not allow ticket closing through portal"
+msgstr "لا يسمح الفريق بإغلاق التذاكر عبر البوابة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.portal_helpdesk_ticket
+msgid "There are currently no Ticket for your account."
+msgstr "لا يوجد حاليا تذكرة لحسابك."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.team_rating_page
+msgid "There are no ratings yet."
+msgstr "لا توجد تقييمات حتى الآن."
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "This Month"
+msgstr "هذا الشهر"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "This Week"
+msgstr "هذا الاسبوع"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "This Year"
+msgstr "هذه السنة"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "This dashboard will activate once you have created your first ticket."
+msgstr "سيتم تنشيط لوحة القيادة هذه بمجرد إنشاء تذكرتك الأولى."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__assign_hours
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__close_hours
+msgid "This duration is based on the working calendar of the team"
+msgstr "تعتمد هذه المدة على تقويم عمل الفريق"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__open_hours
+msgid "This duration is not based on the working calendar of the team"
+msgstr "لا تعتمد هذه المدة على تقويم عمل الفريق"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__campaign_id
+msgid ""
+"This is a name that helps you keep track of your different campaign efforts,"
+" e.g. Fall_Drive, Christmas_Special"
+msgstr "هذا اسم يساعدك على تتبع جهود حملتك المختلفة ، "
+"على سبيل المثال Fall_Drive و Christmas_Special"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__medium_id
+msgid "This is the method of delivery, e.g. Postcard, Email, or Banner Ad"
+msgstr "هذه هي طريقة التسليم ، على سبيل المثال بطاقة بريدية أو بريد إلكتروني أو إعلان لافتة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__source_id
+msgid ""
+"This is the source of the link, e.g. Search Engine, another domain, or name "
+"of email list"
+msgstr "هذا هو مصدر الارتباط ، على سبيل المثال محرك بحث أو مجال آخر أو اسم من قائمة البريد الإلكتروني"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.error_message
+msgid ""
+"This product serial number already registered with other customer.Please "
+"check or contact support team."
+msgstr "الرقم التسلسلي لهذا المنتج مسجل بالفعل لدى عميل آخر. من فضلك تحقق أو اتصل بفريق الدعم."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__use_helpdesk_timesheet
+msgid "This required to have project module installed."
+msgstr "هذا مطلوب لتركيب وحدة المشروع."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_stage__fold
+msgid ""
+"This stage is folded in the kanban view when there are no records in that "
+"stage to display."
+msgstr "يتم طي هذه المرحلة في عرض كانبان عند عدم وجود سجلات في ذلك المرحلة المراد عرضها."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_stage_view_form
+msgid "This step is done. Click to block or set in progress."
+msgstr "تم الانتهاء من هذه الخطوة. انقر للحظر أو التعيين قيد التقدم."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_account_analytic_line__ticket_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_account_move_line__ticket_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__ticket_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_status__ticket_id
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_activity
+msgid "Ticket"
+msgstr "تذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_dashboard
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_team_analysis_action
+msgid "Ticket Analysis"
+msgstr "تحليل التذاكر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__ticket_closed
+msgid "Ticket Closed"
+msgstr "التذكرة مغلقة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__create_date
+msgid "Ticket Create Date"
+msgstr "تاريخ إنشاء التذكرة"
+
+#. module: product_warranty_axis
+#: model:mail.message.subtype,name:product_warranty_axis.mt_team_ticket_new
+#: model:mail.message.subtype,name:product_warranty_axis.mt_ticket_new
+msgid "Ticket Created"
+msgstr "تم إنشاء التذكرة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+msgid "Ticket Creation Date"
+msgstr "تاريخ إنشاء التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__ticket_deadline
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_report_analysis_view_search
+msgid "Ticket Deadline"
+msgstr "الموعد النهائي للتذكرة"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Ticket Due Time"
+msgstr "وقت استحقاق التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__ticket_failed
+msgid "Ticket Failed"
+msgstr "فشل التذكرة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Ticket ID"
+msgstr "معرف التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__number
+msgid "Ticket Id"
+msgstr "معرف التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__ticket_invoice_ids
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_invoice_tree
+msgid "Ticket Invoice"
+msgstr "فاتورة التذكرة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_tree
+msgid "Ticket Name"
+msgstr "اسم التذكرة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.search_helpdesk_ticket_page
+msgid "Ticket Number"
+msgstr "رقم التذكرة"
+
+#. module: product_warranty_axis
+#: model:mail.message.subtype,name:product_warranty_axis.mt_team_ticket_rated
+#: model:mail.message.subtype,name:product_warranty_axis.mt_ticket_rated
+msgid "Ticket Rated"
+msgstr "تم تصنيف التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_helpdesk_sla_status
+msgid "Ticket SLA Status"
+msgstr "حالة تذكرة SLA"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__ticket_stage_id
+msgid "Ticket Stage"
+msgstr "مرحلة التذكرة"
+
+#. module: product_warranty_axis
+#: model:mail.message.subtype,name:product_warranty_axis.mt_team_ticket_stage
+msgid "Ticket Stage Changed"
+msgstr "تم تغيير مرحلة التذكرة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.search_helpdesk_ticket_page
+msgid "Ticket Status"
+msgstr "حالة التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_tag_action
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_tag_menu
+msgid "Ticket Tags"
+msgstr "بطاقات التذاكر"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_type_action
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla__ticket_type_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__ticket_type_id
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__ticket_type_id
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_ticket_type_menu
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "Ticket Type"
+msgstr "نوع التذكرة"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#, python-format
+msgid "Ticket closed by the customer"
+msgstr "التذكرة مغلقة من قبل العميل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__allow_portal_ticket_closing
+msgid "Ticket closing"
+msgstr "إغلاق التذكرة"
+
+#. module: product_warranty_axis
+#: model:mail.message.subtype,description:product_warranty_axis.mt_ticket_new
+msgid "Ticket created"
+msgstr "تم إنشاء التذكرة"
+
+#. module: product_warranty_axis
+#: model:mail.message.subtype,description:product_warranty_axis.mt_ticket_rated
+msgid "Ticket rated"
+msgstr "تم تصنيف التذكرة"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.action_upcoming_sla_fail_all_tickets
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_my_ticket_action_no_create
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_sla
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_team
+#: model:ir.actions.act_window,name:product_warranty_axis.helpdesk_ticket_action_unassigned
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__ticket_ids
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_partner__ticket_count
+#: model:ir.model.fields,field_description:product_warranty_axis.field_res_users__ticket_count
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_ticket_menu_main
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_kanban
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_tree
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.portal_helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.portal_my_home_helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.portal_my_home_menu_helpdesk
+msgid "Tickets"
+msgstr "تذاكر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_digest_digest__kpi_helpdesk_tickets_closed
+msgid "Tickets Closed"
+msgstr "التذاكر مغلقة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_summary_form_view
+msgid "Tickets List"
+msgstr "قائمة التذاكر"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis_closed
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Tickets Search"
+msgstr "بحث التذاكر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_stage__is_close
+msgid ""
+"Tickets in this stage are considered as done. This is used notably when "
+"computing SLAs and KPIs on tickets."
+msgstr "تعتبر التذاكر في هذه المرحلة كما هي. يتم استخدام هذا بشكل خاص عندما حساب اتفاقيات مستوى الخدمة ومؤشرات الأداء الرئيسية على التذاكر."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla__priority
+msgid "Tickets under this priority will not be taken into account."
+msgstr "التذاكر التي تندرج تحت هذه الأولوية لن تؤخذ في الاعتبار."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_helpdesk_sale_timesheet
+msgid "Time Reinvoicing"
+msgstr "إعادة إصدار الفواتير للوقت"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__ticket_close_hours
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__close_hours
+msgid "Time to close (hours)"
+msgstr "وقت الإغلاق (ساعات)"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_sla_report_analysis__ticket_assignation_hours
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__assign_hours
+msgid "Time to first assignment (hours)"
+msgstr "الوقت المستغرق حتى أول واجب (ساعات)"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__timesheet_ids
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Timesheet"
+msgstr "ورقة التوقيت"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_helpdesk_timesheet
+msgid "Timesheet on Ticket"
+msgstr "الجدول الزمني على التذكرة"
+
+#. module: product_warranty_axis
+#: model:digest.tip,name:product_warranty_axis.digest_tip_helpdesk_0
+msgid "Tip: Create tickets from incoming emails"
+msgstr "نصيحة: قم بإنشاء تذاكر من رسائل البريد الإلكتروني الواردة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_high
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_low
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_medium
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_my
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_tree
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_main_urgent
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_pending_ticket
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_team
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_unassigned
+msgid ""
+"To get things done, use activities and status on tickets. <br>\n"
+"                Chat in real time or by email to collaborate efficiently."
+msgstr "لإنجاز الأمور ، استخدم الأنشطة والحالة على التذاكر. <br> \ n الدردشة في الوقت الفعلي أو عبر البريد الإلكتروني للتعاون بكفاءة."
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_my_ticket_action_no_create
+msgid ""
+"To get things done, use activities and status on tickets.<br>\n"
+"                Chat in real time or by email to collaborate efficiently."
+msgstr "لإنجاز المهام ، استخدم الأنشطة والحالة على التذاكر. <br> \ n الدردشة في الوقت الفعلي أو عبر البريد الإلكتروني للتعاون بكفاءة."
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Today"
+msgstr "اليوم"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Today Activities"
+msgstr "أنشطة اليوم"
+
+#. module: product_warranty_axis
+#: model:ir.actions.act_window,name:product_warranty_axis.summary_tree_view
+msgid "Tree"
+msgstr "شجرة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_twitter
+msgid "Twitter"
+msgstr "تويتر"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket_type__name
+msgid "Type"
+msgstr "اكتب"
+
+#. module: product_warranty_axis
+#: model:ir.model.constraint,message:product_warranty_axis.constraint_helpdesk_ticket_type_name_uniq
+msgid "Type name already exists !"
+msgstr "اسم النوع موجود بالفعل!"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_type_action
+msgid "Types are perfect to categorize your tickets."
+msgstr "الأنواع مثالية لتصنيف التذاكر الخاصة بك."
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__portal_rating_url
+msgid "URL to Submit an Issue"
+msgstr "URL لإرسال مشكلة"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/controllers/portal.py:0
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+#, python-format
+msgid "Unassigned"
+msgstr "غير معين"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__unassigned_tickets
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_kanban
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_search_analysis_closed
+msgid "Unassigned Tickets"
+msgstr "التذاكر غير المخصصة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_unread
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_unread
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__message_unread_counter
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Upcoming SLA Fail"
+msgstr "فشل جيش تحرير السودان القادم"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__upcoming_sla_fail_tickets
+msgid "Upcoming SLA Fail Tickets"
+msgstr "تذاكر فشل SLA القادمة"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla__priority__3
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_sla_report_analysis__priority__3
+#: model:ir.model.fields.selection,name:product_warranty_axis.selection__helpdesk_ticket__priority__3
+#, python-format
+msgid "Urgent"
+msgstr "عاجل"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_tickets_view_search
+msgid "Urgent Priority"
+msgstr "أولوية عاجلة"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__use_coupons
+msgid "Use Coupons"
+msgstr "استخدم القسائم"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__use_credit_notes
+msgid "Use Credit Notes"
+msgstr "استخدم إشعارات الائتمان"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__use_product_repairs
+msgid "Use Repairs"
+msgstr "استخدم الإصلاحات"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__use_product_returns
+msgid "Use Returns"
+msgstr "استخدم المرتجعات"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid "Use the breadcrumbs to go back to the Kanban view."
+msgstr "استخدم فتات الخبز للعودة إلى طريقة عرض كانبان."
+
+#. module: product_warranty_axis
+#: model:res.groups,name:product_warranty_axis.group_helpdesk_user
+msgid "User"
+msgstr "المستعمل"
+
+#. module: product_warranty_axis
+#: model:ir.model,name:product_warranty_axis.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: product_warranty_axis
+#: model:helpdesk.team,name:product_warranty_axis.helpdesk_team3
+msgid "VIP Support"
+msgstr "دعم VIP"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/js/tours/helpdesk.js:0
+#, python-format
+msgid ""
+"Want to <b>boost your customer satisfaction</b>?<br/><i>Click Helpdesk to "
+"start.</i>"
+msgstr "هل تريد <b> زيادة رضا العملاء </ b>؟ <br/> <i> انقر فوق مكتب المساعدة من أجل ابدأ. </ i>"
+
+#. module: product_warranty_axis
+#: model:ir.ui.menu,name:product_warranty_axis.helpdesk_product_warranty_mnu
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "Warranty"
+msgstr "ضمان"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__warranty_year
+#: model:ir.model.fields,field_description:product_warranty_axis.field_stock_production_lot__warranty_year
+msgid "Warranty Period"
+msgstr "فترة الضمان"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__use_website_helpdesk_form
+msgid "Website Form"
+msgstr "نموذج الموقع"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__website_message_ids
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_ticket__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_team__website_message_ids
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_ticket__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Welcome"
+msgstr "أهلا بك"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid ""
+"With random assignation, every user gets the same number of tickets. With "
+"balanced assignation, tickets are assigned to the user with the least amount"
+" of open tickets."
+msgstr "مع التخصيص العشوائي ، يحصل كل مستخدم على نفس عدد التذاكر. مع "
+"تخصيص متوازن ، يتم تخصيص التذاكر للمستخدم بأقل مبلغ"
+"من التذاكر المفتوحة."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "Within"
+msgstr "داخل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,field_description:product_warranty_axis.field_helpdesk_team__resource_calendar_id
+msgid "Working Hours"
+msgstr "ساعات العمل"
+
+#. module: product_warranty_axis
+#: model:ir.model.fields,help:product_warranty_axis.field_helpdesk_sla_status__exceeded_days
+msgid ""
+"Working days exceeded for reached SLAs compared with deadline. Positive "
+"number means the SLA was eached after the deadline."
+msgstr "تم تجاوز أيام العمل لاتفاقيات مستوى الخدمة التي تم الوصول إليها مقارنة بالموعد النهائي. إيجابي "
+"الرقم يعني أنه تم إرسال كلٍ من SLA بعد الموعد النهائي."
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "Yesterday"
+msgstr "في الامس"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_stage_view_form
+msgid ""
+"You can also add a description to help your coworkers understand the meaning"
+" and purpose of the stage."
+msgstr "يمكنك أيضًا إضافة وصف لمساعدة زملائك في العمل على فهم المعنى والغرض من المرحلة."
+
+#. module: product_warranty_axis
+#: model:ir.model.constraint,message:product_warranty_axis.constraint_res_users_target_closed_not_zero
+#: model:ir.model.constraint,message:product_warranty_axis.constraint_res_users_target_rating_not_zero
+#: model:ir.model.constraint,message:product_warranty_axis.constraint_res_users_target_success_not_zero
+msgid "You cannot have negative targets"
+msgstr "لا يمكن أن يكون لديك أهداف سلبية"
+
+#. module: product_warranty_axis
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.action_upcoming_sla_fail_all_tickets
+#: model_terms:ir.actions.act_window,help:product_warranty_axis.helpdesk_ticket_action_sla
+msgid "You completed all your tickets on time."
+msgstr "لقد أكملت جميع التذاكر الخاصة بك في الوقت المحدد."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.registration_error_message
+msgid "You have entered wrong Serial Number"
+msgstr "لقد أدخلت رقمًا تسلسليًا خاطئًا"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_error_message
+msgid "You have entered wrong ticket number"
+msgstr "لقد أدخلت رقم تذكرة خاطئ"
+
+#. module: product_warranty_axis
+#: code:addons/product_warranty_axis/models/helpdesk.py:0
+#, python-format
+msgid "You must have team members assigned to change the assignment method."
+msgstr "يجب أن يكون لديك أعضاء فريق معينين لتغيير طريقة التعيين."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form_success
+msgid "Your Ticket Number is"
+msgstr "رقم تذكرتك هو"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_ticket_view_form
+msgid "ZIP"
+msgstr "أزيز"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "days<br/>"
+msgstr "أيام<br/>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "e.g. Close urgent tickets within 36 hours"
+msgstr "على سبيل المثال إغلاق التذاكر العاجلة في غضون 36 ساعة"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "eLearning"
+msgstr "التعلم الإلكتروني"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.search_helpdesk_ticket_page
+msgid "eg TICK-00001"
+msgstr "على سبيل المثال TICK-00001"
+
+#. module: product_warranty_axis
+#: model_terms:digest.tip,tip_description:product_warranty_axis.digest_tip_helpdesk_0
+msgid "generate tickets in your pipeline."
+msgstr "إنشاء تذاكر في خط الأنابيب الخاص بك."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "hours<br/>"
+msgstr "ساعات<br/>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_sla_view_form
+msgid "minutes<br/>"
+msgstr "الدقائق<br/>"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "team search"
+msgstr "بحث الفريق"
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.tmp_helpdesk_ticket_form
+msgid "text"
+msgstr "نص"
+
+#. module: product_warranty_axis
+#. openerp-web
+#: code:addons/product_warranty_axis/static/src/xml/helpdesk_team_templates.xml:0
+#, python-format
+msgid "to create a ticket."
+msgstr "لإنشاء تذكرة."
+
+#. module: product_warranty_axis
+#: model_terms:ir.ui.view,arch_db:product_warranty_axis.helpdesk_team_view_form
+msgid "to create tickets"
+msgstr "لإنشاء تذاكر"

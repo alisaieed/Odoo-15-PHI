@@ -1,0 +1,960 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Product Warranty, Claim, Verify Management in odoo, set warranty period in days, months, years</title>
+</head>
+<body>
+    <div class="container">
+        <hr>
+      <div class="row">
+        <div class="col-lg-2" style="text-align: left;">
+          <img src="images/axis-logo.png" alt="axistechnolabs all odoo apps" class="img-fluid" >
+        </div>
+        <div class="col-lg-3 justify-content-between align-self-center" style="border-left: 1px solid #e5e5e5;border-right: 1px solid #e5e5e5;align-self: center;justify-content: space-between;padding: 0px 12px !important;">
+          <div class="text-right">
+            <a href="https://apps.odoo.com/apps/modules/browse?search=axis+technolabs" target="_blank" class="btn btn-sm" style="font-size:14px;font-weight:500;background-color:#406d8d;color:#fff;border-radius: 25px;padding: 5px 10px 5px 10px;"><i class="fa fa-list-alt mr-1"></i>Axis Technolabs Odoo Apps</a>
+          </div>
+        </div>
+        <div class="col-lg-7 justify-content-between align-self-center" style="align-self: center !important;text-align: right;">
+          
+          <div class="mt-md-0 mt-4 mb-3 mb-lg-0">
+            <span class="fa fa-support" style="margin-right: 2px;color:#6c55bd; font-size:18px; vertical-align:middle"></span>
+            <span style="color:#406d8d; font-size:14px;font-weight: 800;">Support :</span>
+            <div style="display: inline-block;">
+              <a href="mailto:business@axistechnolabs.com?subject=product warranty management" target="_blank" style="color:#406d8d;display:inline-block;padding: 3px 7px;border: 1px solid #6c55bd;border-radius: 5px;margin: 0 0 3px 0;">
+                <span class="fa fa-envelope-o" style="margin-right: 2px;color:#6c55bd; font-size:18px;"></span>
+                <span style="color:#406d8d; font-size:14px;font-weight: 500;">Email</span>
+              </a>
+            </div>
+            <span class="btn btn-sm" style="padding: 4px 12px 4px 6px !important;font-size:14px; font-weight:500;margin-bottom: 2px !important; border-radius: 25px; background-color:#406d8d; color:#fff"><span style="position: relative;background-color: white;border-radius: 33px;padding: 2px;display: inline-flex;"><i class="fa fa-check" style="color: #406d8d;"></i></span> Community</span>
+            <span class="btn btn-sm" style="padding: 4px 10px 4px 6px !important;font-size:14px; font-weight:500;margin-bottom: 2px !important; border-radius: 25px; background-color:#406d8d; color:#fff"><span style="position: relative;background-color: white;border-radius: 33px;padding: 2px;display: inline-flex;"><i class="fa fa-check" style="color: #406d8d;"></i></span> Enterprise</span>
+            <span class="btn btn-sm" style="padding: 4px 10px 4px 6px !important;font-size:14px; font-weight:500;margin-bottom: 2px !important; border-radius: 25px; background-color:#406d8d; color:#fff"><span style="position: relative;background-color: white;border-radius: 33px;padding: 2px;display: inline-flex;"><i class="fa fa-check" style="color: #406d8d;"></i></span> Odoo.sh</span>
+          </div>
+        </div>
+      </div>
+      <hr>
+        <!-- Begin: Product warranty management in odoo -->
+        <div class="" style="text-align: center;">
+            <h1 style="color:#007bff;font-size:25px;padding-bottom:5px;padding-top:10px;font-weight: 600;">Product Warranty Management in odoo, set warranty period in days, months, years </h1>
+            <p style="color:#091e42;font-size:20px;padding-bottom:7px;text-align: justify;">Product Warranty management module you can assign single or multiple warranties to your products, create forms and warranty presets, set warranty period from odoo backend, add warranty thumbnails, enable product warranty to renew and more. Manage all your requests in a single page, change request status with one click, send an email to your customers directly from the request manager pages, add an unlimited warranty to a product, easily sell warranties with your products, add warranties to your variable products, enable an easy overview of warranty requests for your customers, allow multiple warranty requests using this odoo module. User can verify Claim and extend the warranty.</p>
+            
+            <p style="color:#091e42;font-size:20px;padding-bottom:10px;text-align: justify;">Warranty module having functionaltiy to use for Call / Ticket Customer Service Management in odoo module. You can send a notification to the clients/customers to renew Warranty when your product warranty is expired. Under the contract, the product provides service to customers from complaint management, email, warranty management, call management, and product issue management.</p>
+            <a href="https://youtu.be/sixTzohegTQ" target="_blank" style="font-size:20px;padding-top:12px;padding-bottom:15px;line-height:normal;filter: drop-shadow(7.071px 8.426px 22px rgba(0,0,0,0.08));border-radius: 5px;color: #fff;background-color: #7691bb;text-transform: uppercase;display: inline-block;width:100%;margin-right:10px;">CLICK TO WATCH VIDEO DEMO for  Product Warranty Management in odoo</a>
+           <li class="shadow" style="display:flex;background-color: #ffffff;padding:5px 12px 5px 24px;line-height:normal;margin-bottom:7px;align-items: center;">
+          <h1 style="color:red; padding:2px 0; font-size:18px; text-align:justify; font-weight:bold">Product Warranty Management Supported <b>Multiple languages with (English, Arabic, Chinese Traditional, Chinese Simplified, Danish-dansk, Dutch-Nederlands, Spanish - Español, French-français,Russia-Russian,German - Deutsch) </b> in odoo. </h1>
+          </li>
+        </div>
+
+        <h2 style="color: #116d82;padding-top:10px;font-size: 22px;text-align: center;">This module supported Odoo Community and Odoo Enterprise edition </h2>
+        <p style="color:#000000;text-align: center;">(If you want to run in enterprise edition you have to uninstall existing helpdesk module)</p>
+
+        <!-- End: Product warranty module in odoo -->
+        <!-- Begin: Product warranty module features -->
+        <div style="background-color:#e1e3ea; border-radius:5px; padding:5px">
+            <h1 style="color:#091e42; font-size:24px"><b style="color:#59b724">Key Features</b> for <b style="color:#4e79bd">Odoo Product Warranty Management Module</b>
+            </h1>
+        </div>
+
+      <div class="fb_feed_features" style="padding-top:50px;">          
+        <div class="row">
+         <div class="col-lg-4 col-sm-6 col-12" style="margin-bottom: 30px;">
+            <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1;">
+                  <img class="img-fluid center-block" alt="odoo warranty management" src="images/dashboard_icon.png" style="padding:1em; width:90px; height:90px;">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Analytic Dashboard 
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Dashboard displays product warranty and ticket management statistics data for manage warranty claim and helpdesk in odoo.
+                </p>
+              </div>
+          </div>
+          <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0db092;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0db092">
+                  <img class="img-fluid center-block" alt="product warranty management module in odoo v14, v13, v12" src="images/support-manager.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Manage Support Executive
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Add, edit, and delete your support employees or support agents with product warranty management module in odoo.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1">
+                  <img class="img-fluid center-block" alt="product warranty manage module in odoo, helpdesk support" src="images/scrum.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Customer Support Portal
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40"> Odoo Product warranty management solutions provides customer support portal for odoo website to help manage product warranty in odoo.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1">
+                  <img class="img-fluid center-block" alt="warranty chain management, reports in odoo" src="images/report.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Report of Each Users
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Warranty management system allows you see all activity and reports of support users and customers.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0db092;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0db092">
+                  <img class="img-fluid center-block" alt="product warranty Ticket Filters in odoo" src="images/filter.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Ticket Filters
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">With our ticket filter feature, you can see all activity and report of customers product warranty in odoo.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1">
+                  <img class="img-fluid center-block" alt="warranty management system software in odoo" src="images/customer-service.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Agents/Support Executives
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Configurable auto email sending mechanism when a customer creates a support ticket from odoo website.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1">
+                  <img class="img-fluid center-block" alt="assign status such as pending, queue, resolved through our warranty management system in odoo" src="images/resolved.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Status, Assign, Resolved
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Set product status for warranty and add assign status such as pending, queue, resolved through our warranty management system in odoo.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0db092;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0db092">
+                  <img class="img-fluid center-block" alt="odoo website helpdesk tickets in odoo" src="images/website.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Website Portal
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">All supported responses are displayed in odoo website helpdesk tickets menu for customers.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1">
+                  <img class="img-fluid center-block" alt="warranty claim management software in odoo" src="images/calendar.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Calender View
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">From odoo product support admin, you can see all tickets in a calendar view with its status.
+                </p>
+              </div>
+          </div>  
+           
+          <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1">
+                  <img class="img-fluid center-block" alt="odoo warranty renew warranty" src="images/procurement.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Bill/invoices List
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Support Manager can close tickets and send an invoice to customers for renewing warranty on products in odoo.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0db092;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0db092">
+                  <img class="img-fluid center-block" alt="Odoo website renew Warranty Management Module" src="images/documents.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Document Attachment
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Document attachment functionality implements in website frontend form for product warranty in odoo.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1">
+                  <img class="img-fluid center-block" alt="manage product renew warranty in Odoo" src="images/responsive.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Website Create Tickets
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Added features in odoo product warranty customer support form for creating customer tickets for product service.
+                </p>
+              </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1">
+                  <img class="img-fluid center-block" alt="renew warranty on products in Odoo" src="images/warranty.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Roles and Rights
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Product warranty renew support odoo module, allows users to go through predefined roles and right first.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0db092;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0db092">
+                  <img class="img-fluid center-block" alt="Configuring Product warranty in Odoo" src="images/product-management.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Set Warranty Period
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">You can set a product warranty period in days, months and years for product warranty verification.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6" style="margin: 30px 0 30px 0;">
+              <div class="bg-white shadow" style="padding:10px 15px; border-radius:10px; min-height:202px;border: 2px solid #0c9ad1;">
+                <div class="bg-white shadow-sm" style="width:90px; height:90px; border-radius:50%; margin:0 auto; margin-top:-60px;border: 1px solid #0c9ad1">
+                  <img class="img-fluid center-block" alt="Configuring Product warranty in Odoo" src="images/renew.png" style="padding:1em; width:90px; height:90px">
+                </div>
+                <h2 class="text-center" style="font-family: 'Montserrat', sans-serif;margin: 10px 0; font-weight:600; font-size:19px;color:#59b724">Add Warranty Renew
+                </h2>
+                <p class="text-center" style="font-family: 'Open Sans', sans-serif; color:#0f1e40">Add,extend product warranty period in years, months and days with our odoo product warranty renewal feature.
+                </p>
+              </div>
+            </div>
+      </div>
+  </div>
+            
+        
+        <!-- Begin: Benefits Of Product warranty -->
+        <div>
+           <h1 class="text-center alert" style="font-family:Montserrat; font-weight:500;font-size: 25px; color:#ffffff; border-radius:10px; background-color:#6e83b7;padding: 7px 0;">Add Free Product Warranty or Add Paid Product Warranty in odoo
+           </h1>           
+           <div style="text-align:center;">
+                <p style="color:#091e42;font-size:20px;padding-top:10px;">Set up the product Warranty type for each product independently. Add quick warranties or a preset warranty. Pick Included or Paid warranties include the time periods like Days, Weeks, Months, Years.</p>
+           <br/>
+                
+           <img src="images/demo.png" style="max-width:100%;border: 1px solid #1b4080;" />
+                
+           <p style="color:#091e42;font-size:20px;padding-top:40px;text-align: justify;">Manage multi-item order requests in one single parent request! Process each product within the order warranty request separately. Set the Request Status for each product within the order individually and change the status to Processing, Completed, or Rejected. All the options for the full management of your multi-product warranty requests are on a single page and a click away! Returns are also available for single or multiple items or products within a single order.</p>
+
+           <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Product Warranty / Helpdesk Dashboard
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/dashboard.png" alt="Product warranty / Helpdesk Dashboard odoo module download">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Summary Charts / List for Helpdesk
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/summary.png" alt="Product warranty Dashboard odoo module with helpdesk v14">
+                </span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Configure User : Click on Settings => User => Support Manager
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/10.png" alt="Product renew warranty odoo module v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">In Product Module set "can be warranty" check for product warranty.
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/1.png" alt="Product set warranty odoo module v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+             
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">When you checked "can be Warranty" field then you will able to see Serial Number
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/2.png" alt="Product set warranty odoo module v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Click on Lot / Serial Number button to Create or Modify Serial Number
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/3.png" alt="Product  Modify Serial Number in warranty odoo module v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Search "Can be warranty" in search view, you will get list of warranty products
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/se.png" alt="Search Warranty in product odoo v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+        
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Create customer name, serial number, customer email, warranty period <br>(start date and end date) with product, Lot / serial number.
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/4.png" alt="You can create customer name, serial number, customer email, warranty period (start date and end date)">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Create Support Ticket for Product Warranty
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/5.png" alt="Create Support Ticket for Product Warranty odoo v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Ticket is created successfully
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/6.png" alt="add Warranty in product odoo v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Ticket created in backend
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/7.png" alt="product warranty helpdesk ticket odoo v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+
+           <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">If Wrong Serial Number while creating ticket
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/67.png" alt="warranty add helpdesk ticket odoo v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;"> Error message generated when wrong Serial Number
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/98.png" alt="warranty add helpdesk ticket odoo v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">If  Serial Number is already assigned to another customer:
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/25.png" alt="Serial Number is already assigned warranty odoo v14, v13, v12">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">While Creating ticket Serial Number is already assigned to another customer:
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/35.png" alt="customer product warranty odoo module in Community">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Below message is generated when Serial Number is already assigned to another customer.
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/45.png" alt="product warranty odoo module in enterprise">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Product Warranty Menu
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/WarrantyMenu.png" alt="product warranty menu odoo module in enterprise">
+                </span>
+              </div>
+            </div>
+          </div>
+              
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">According to Product and Serial Number and Warranty period will be defined
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/c.png" alt="product warranty menu odoo module in enterprise">
+                </span>
+                  <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/d.png" alt="product warranty menu odoo module in enterprise">
+                </span>
+              </div>
+            </div>
+          </div>
+
+           <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Support Manager can Create Task, Assign to team
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/fv.png" alt="Support Manager product warranty odoo module">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Following Task will created
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/e.png" alt="product warranty management in odoo">
+                </span>
+              </div>
+            </div>
+          </div>
+
+           <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Support Manager can Create Invoice
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/f.png" alt="product warranty Support Manager can Create Invoice in odoo">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Following Invoice will created
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/ds.png" alt="product warranty Support Manager can Create Invoice in odoo">
+                </span>
+              </div>
+            </div>
+          </div>
+
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Support Manager can Create Repair
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/g.png" alt="product warranty Support Manager can Create Repair in odoo">
+                </span>
+              </div>
+            </div>
+         </div>
+
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Following Repair will created
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/cvc.png" alt="Repair product warranty Support in odoo">
+                </span>
+              </div>
+            </div>
+         </div>
+
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">In chatter box, invoice number and repair number will be listed
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/df.png" alt="chatter box product warranty Support in odoo">
+                </span>
+              </div>
+            </div>
+         </div>
+
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Invoice Number and Repair Number will be listed out
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/jk.png" alt="warranty module in odoo">
+                </span>
+              </div>
+            </div>
+         </div>
+
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Support Manager can create Timesheet
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/tim.png" alt="Support Manager can create Timesheet warranty module in odoo">
+                </span>
+              </div>
+            </div>
+         </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Settings --> users --> Support user
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/123.png" alt="warranty module Configuring in odoo">
+                </span>
+              </div>
+            </div>
+         </div>
+
+          <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Support User cannot create Task, Invoice
+                </h2>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/676.png" alt="warranty module Configuring in odoo">
+                </span>
+              </div>
+            </div>
+         </div>
+             
+        <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Kanban View - Tickets with Status (New, In Progress, Solved)
+                </h2>
+                 <p style="color:#091e42;font-size:20px;padding-top:0px;">Customer tickets status (New, Pending, Progress, Resolved) - You can modified as per your requirement</p>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/My Tickets - Odoo.png" alt="helpdesk tickets kanban view in odoo">
+                </span>
+              </div>
+            </div>
+         </div>
+
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">List View - Tickets with Status (New, In Progress, Solved)
+                </h2>
+               
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/My Tickets - Odoo (1).png" alt="helpdesk tickets kanban view in odoo">
+                </span>
+              </div>
+            </div>
+         </div>
+               
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Form View - Detail page of Customer Ticket
+                </h2>
+               
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/Resolve_error_obtaining_dependencies_10_Odoo.png" alt="helpdesk tickets kanban view in odoo">
+                </span>
+              </div>
+            </div>
+         </div> 
+        
+        <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Form Activity View - Tickets with Status
+                </h2>
+                <p style="color:#091e42;font-size:20px;padding-top:0px;">Manage customer tickets and see all tickets in the activity view</p>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/My Tickets - Odoo (2).png" alt="helpdesk tickets kanban view in odoo">
+                </span>
+              </div>
+            </div>
+         </div>       
+
+       <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Calendar View - Tickets with Status
+                </h2>
+                 <p style="color:#091e42;font-size:20px;padding-top:0px;">Manage customer tickets and see all tickets in the calendar view</p>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/My Tickets  Apr 5 – 11  2020  - Odoo.png" alt="helpdesk tickets kanban view in odoo">
+                </span>
+              </div>
+            </div>
+         </div>                            
+
+        <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 5px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 5px 5px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">View Ticket for User
+                </h2>
+                  <p style="color:#091e42;font-size:20px"><b>User can communicate and can see details of Ticket</b></p>
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/show.png" alt="helpdesk tickets kanban view in odoo">
+                </span>
+              </div>
+            </div>
+         </div>      
+
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Search Ticket by User
+                </h2>
+               
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/search.png" alt="helpdesk tickets kanban view in odoo">
+                </span>
+              </div>
+            </div>
+         </div> 
+
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Wrong Ticket number search by User
+                </h2>
+               
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/error.png" alt="helpdesk tickets kanban view in odoo">
+                </span>
+              </div>
+            </div>
+         </div> 
+    
+         <div class="shadow-sm" style="border-radius: 5px;">
+            <div class="panel panel-primary" style="margin: 15px 0;border: 2px solid #e4e6e8;border-radius: 5px;">
+              <div class="panel-heading" style="padding: 10px 20px;background-color: #e4e6e8;">
+                <h2 class="panel-title" style="color: #59b724;font-size: 24px;font-weight: 600;">Odoo Products Warranty management WorkFlow
+                </h2>
+               
+              </div>
+              <div class="panel-body" style="padding: 0 08px 10px 08px;">
+                <hr>
+                <span>
+                  <img class="img-fluid thumbnail" style="border: 1px solid #7c7bad;" src="images/flow2.png" alt="helpdesk tickets kanban view in odoo">
+                </span>
+              </div>
+            </div>
+         </div> 
+        
+
+               <div class="oe_spaced">
+                <h2 class="oe_slogan text-center"><a href="https://apps.odoo.com/apps/modules/browse?search=Axis+technolabs" style="color:#4e4e4e!important;">Axis Technolabs other Apps for Purchase :</a></h2>
+                <div class="row justify-content-center">
+                 <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+                      <div class="page_design_portfolio">
+                        <div class="page_design_title" style="border-bottom:1px solid #f0f0f0; margin-bottom:10px; padding:8px; background-color:#d9cfcf; border-radius:5px">
+                          <h2 style="margin-bottom:0; color:#333; font-size:16px">Doctor Appointment Booking in odoo, Clinic Website Appointment Book in Odoo, Doctor calendar booking slot, Patient appointment booking and payment online</h2>
+                        </div>
+                        <a href="https://apps.odoo.com/apps/modules/14.0/doctor_appointment_booking_advance_axis/" target="_blank">
+                          <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                            <img class="img-fluid" alt="Doctor Appointment Booking in odoo, Clinic Website Appointment Book in Odoo, Doctor calendar booking slot, Patient appointment booking and payment online" src="images/doctor_appointment.png">
+                          </div></a>
+                          <a href="https://apps.odoo.com/apps/modules/14.0/doctor_appointment_booking_advance_axis/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+                        </div>
+                      </div>
+                       <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+                            <div class="page_design_portfolio">
+                              <div class="page_design_title" style="border-bottom:1px solid #f0f0f0; margin-bottom:10px; padding:8px; background-color:#bdbcbc; border-radius:5px">
+                                <h2 style="margin-bottom:0; color:#333; font-size:16px">Multicompany Odoo Dashboards-POS Dashboard, CRM Dashboard, Inventory Dashboard, Sales Dashboard, Account Dashboard
+                                </h2>
+                              </div>
+                              <a href="https://apps.odoo.com/apps/modules/14.0/multicompany_dashboard_axis/" target="_blank">
+                                <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                                  <img class="img-fluid" alt="Multicompany Odoo Dashboards-POS Dashboard, CRM Dashboard, Inventory Dashboard, Sales Dashboard, Account Dashboardo" src="images/multicompany_dashboard.jpeg">
+                                </div></a>
+                                <a href="https://apps.odoo.com/apps/modules/14.0/multicompany_dashboard_axis/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+                              </div>
+                            </div>
+                     <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+                        <div class="page_design_portfolio">
+                          <div class="page_design_title" style="border-bottom:1px solid #f0f0f0; margin-bottom:10px; padding:8px; background-color:#d9cfcf; border-radius:5px">
+                            <h2 style="margin-bottom:0; color:#333; font-size:16px">Instagram Feed Snippet, Instagram posts display in odoo website</h2>
+                          </div>
+                          <a href="https://apps.odoo.com/apps/modules/14.0/instagram_feeds/">
+                            <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                              <img class="img-fluid" alt="Instagram Feed Snippet, Instagram posts display in odoo website" src="images/instagram.png" style="height:auto; width:100%">
+                            </div></a>
+                            <a href="https://apps.odoo.com/apps/modules/14.0/instagram_feeds/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+                          </div>
+                        </div>
+                    
+                      
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+                      <div class="page_design_portfolio">
+                        <div class="page_design_title" style="border-bottom:1px solid #f0f0f0; margin-bottom:10px; padding:8px; background-color:#d9cfcf; border-radius:5px">
+                          <h2 style="margin-bottom:0; color:#333; font-size:16px">SEO-URL Redirect, Website Multiple URL Rewrite, Bulk URL redirect odoo module, downloa from app store</h2>
+                        </div>
+                        <a href="https://apps.odoo.com/apps/modules/14.0/website_url_redirect_axis/" target="_blank">
+                          <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                            <img class="img-fluid" alt="SEO-URL Redirect, Website Multiple URL Rewrite, Bulk URL redirect" src="images/url_redirect.png">
+                          </div></a>
+                          <a href="https://apps.odoo.com/apps/modules/14.0/website_url_redirect_axis/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+                        </div>
+                      </div>
+                        <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+                          <div class="page_design_portfolio">
+                            <div class="page_design_title" style="border-bottom:1px solid #f0f0f0; margin-bottom:10px; padding:8px; background-color:#bdbcbc; border-radius:5px">
+                              <h2 style="margin-bottom:0; color:#333; font-size:16px">Website Helpdesk Support Ticket in Odoo, Issue Management for customers support</h2>
+                            </div>
+                            <a href="https://apps.odoo.com/apps/modules/14.0/website_axis_helpdesk/" target="_blank">
+                              <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                                <img class="img-fluid" alt="Website Helpdesk Support Ticket in Odoo, Issue Management for customers support" src="images/module_helpdesk.png" style="height:auto; width:100%">
+                              </div></a>
+                              <a href="https://apps.odoo.com/apps/modules/14.0/website_axis_helpdesk/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+                            </div>
+                          </div>
+                         
+                            <div class="col-lg-4 col-md-6 text-center" style="margin-bottom:30px">
+                              <div class="page_design_portfolio">
+                                <div class="page_design_title" style="border-bottom:1px solid #f0f0f0; margin-bottom:10px; padding:8px; background-color:#bdbcbc; border-radius:5px">
+                                  <h6 style="margin-bottom:0; color:#333; font-size:16px">Modern Odoo Dashboards for POS, CRM Dashboard, Inventory Dashboard, Sales Dashboard, Account Dashboard
+                                  </h6>
+                                </div>
+                                <a href="https://apps.odoo.com/apps/modules/13.0/modern_dashboard_odoo_axis/">
+                                  <div class="shadow overflow-hidden" style="width:100%; height:180px">
+                                    <img class="img-fluid" alt="Modern Odoo Dashboards-Odoo POS Dashboard, CRM Dashboard, Inventory Dashboard, Sales Dashboard, Account Dashboard" src="images/modern_dashboard.png" style="height:auto; width:100%">
+                                  </div></a>
+                                  <a href="https://apps.odoo.com/apps/modules/13.0/modern_dashboard_odoo_axis/" target="_blank" style="font-size:24px; padding-top:12px; padding-bottom:15px; line-height:normal; border-radius:5px; color:#fff; text-transform:uppercase; display:inline-block; max-width:366px; width:100%; margin-top:30px; margin-bottom:30px; background-color:#00a1b1">Buy Now</a>
+                                </div>
+                              </div>
+                            </div>
+                            <section class="oe_row free-support text-center" style=" margin:auto">
+                              <div style="margin-bottom:24px">
+                                <h2 style="color:#333; font-weight:normal; margin-bottom:8px">For Technical Help and Support</h2>
+                              </div>
+                              <p style="margin-bottom:0; font-family:Montserrat; color:#3e3d3d; font-weight:400">At Axistechnolabs we offer end to end solution for all Odoo services which includes custom development, integration, migration, analysis &amp; consultation.</p>
+                              <p style="margin-bottom:0; font-family:Montserrat; color:#3e3d3d; font-weight:400; line-height:40px">Incase of any question regarding this module feel free to email us on <a href="mailto:business@axistechnolabs.com" style="color:#ee305d"><span class="__cf_email__">business@axistechnolabs.com</span></a></p>
+                              <span href="https://www.axistechnolabs.com/" title="Axistechnolabs" target="_blank" style="display:inline-block; color:#ee305d; margin-top:40px; margin-bottom:40px">
+                                <img src="https://i.ibb.co/Bfv0ths/download.png" alt="download doctor appoitment odoo module from odoo app store">
+                              </span>
+                              <div>
+                              
+                                <a class="btn yellow-btn btn-lg" href="skype:chirag_shah10?chat" title="Support Request" target="_blank" style="font-family:Montserrat; background-color:#00aff0; color:rgb(255, 255, 255); font-size:16px; margin-right:5px">Skype Support</a>
+                               
+                              </div><br>
+                            </section>
+                           
+                          </div>
+             
+          <section class="container-fluid">
+           <div class="oe_row oe_spaced" style="width:100%">
+           <h3 class="oe_slogan" style="font-size: 26px;font-weight: 300;opacity: 0.5;color: #333333;font-family: Lato,Open Sans, Helvetica, Sans; margin-top: 32px;margin-bottom: 32px;text-align: center;">For Technical help and support</h3>
+                      <center>
+                          <h3>
+                              <a style="color: #21B799;text-decoration: none;font-weight: 600;" href="mailto:business@axistechnolabs.com">business@axistechnolabs.com</a>
+                          </h3>
+                          <h3>
+                              <a style="color: #21B799;text-decoration: none;font-weight: 600;" href="skype:chirag_shah10?chat">For Skype support: Axis Technolabs</a>
+                          </h3>
+                      </center>
+                  </div>
+              </section>
+                  
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
+
+
+
+          

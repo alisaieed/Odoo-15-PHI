@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="theme_assets_frontend_arabic" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="/arabic_theme/static/src/css/style.css"/>
+        </xpath>
+    </template>
+    <template id="assets_common" name="arabic_report_font" inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+           <link rel="stylesheet" type="text/css" href="/arabic_theme/static/src/css/report_style.css"/>
+        </xpath>
+    </template>
+</odoo>

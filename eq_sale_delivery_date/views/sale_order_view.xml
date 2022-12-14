@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+    <record model="ir.ui.view" id="sale_order_requested_date_form_view">
+        <field name="name">sale.order.requested.date.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']" position="before">
+                <button name="change_delivery_date" type="object" string="Change Delivery Date" class="btn-primary"/>
+                <button name="select_all_lines" type="object" string="Select All" class="btn-primary"/>
+                </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='tax_id']" position="after">
+                <field name="dispatch_date" required="1" attrs="{'readonly': [('product_updatable', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
+                <field name="dispatch_date" required="1" attrs="{'readonly': [('product_updatable', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="before">
+                <field name="select_so_lines" attrs="{'readonly': [('product_updatable', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="before">
+                <field name="select_so_lines" attrs="{'readonly': [('product_updatable', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="wizard_sale_dispatch_date_form_view">
+        <field name="name">wizard.sale.dispatch.date.form</field>
+        <field name="model">wizard.sale.dispatch.date</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="date" required="1"/>
+                    <field name="sale_line_ids" widget="many2many_tags" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="do_change_date" string="Submit" type="object" class="oe_highlight"/>
+                        or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    </data>
+</odoo>

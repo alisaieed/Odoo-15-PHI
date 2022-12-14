@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="registration_error_message" name="Error Message">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <div>
+                        <h1 class="text-center mt-5 text-info">ERROR !!</h1>
+                        <h1 class="text-center text-info">You have entered wrong Serial Number</h1>
+                    </div>
+               </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="error_message" name="Error Message">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <div>
+                        <h1 class="text-center mt-5 text-info">ERROR !!</h1>
+                        <h1 class="text-center text-info">This product serial number already registered with other customer.Please check or contact support team.</h1>
+                    </div>
+               </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="error_message_serial" name="Error Message">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <div>
+                        <h1 class="text-center mt-5 text-info">ERROR !!</h1>
+                        <h1 class="text-center text-info">Please check Product Serial number  or contact support team.</h1>
+                    </div>
+               </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

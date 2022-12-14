@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+	    <template id="external_layout_boxed_fhl">
+		<t t-if="not o" t-set="o" t-value="doc"/>
+
+	        <t t-if="not company">
+            	    <!-- Multicompany -->
+         	    <t t-if="company_id">
+                	<t t-set="company" t-value="company_id"/>
+	            </t>
+            	    <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+	            </t>
+               	    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+	            </t>
+	        </t>
+
+        	<div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+            	    <div class="o_boxed_header">
+            		<div class="row mb8">
+                	    <div class="col-12">
+                    		<img width="100%" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAx4AAAB5CAYAAAC3I/dBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAADFmSURBVHhe7d2HlxzVvbXh7z+/wdzrCIggghFIgADbKAMi2EQbTBI5GAwGBEIIk0UW3PrmKeYnjorq7hppemaA/a51Vvd0nzqpqmv2rpP+XxdCCCGEEEIISybGI4QQQgghhLB0YjxCCCGEEEIISyfGI4QQQgghhLB0YjxCCCGEEEIISyfGI4QQQgghhLB0YjxCCCGEEEIISyfGI4QQQgghhLB0YjxCCCGEEEIISyfGI4QQQgghhLB0YjxCCCGEEEIISyfGI4QQQgghhLB0YjxCCCGEEEIISyfGI4QQQgghhLB0YjxCCCGEEEIISyfGI4QQQgghhLB0YjxCCCGEEEIIS2dLGY9PPvmke+utt7q33367+/zzz1c/PZOvvj7VnTr1zepfIYQQQgghhB8DW8J4fPPNN73huOeee7obbrihu/nmm7uHHnqoO3HiRPd///d/q7G+470PPu4+/PjT1b9CCCGEEEIIPwa2hPE4evRot3Pnzu43v/lN94tf/OJ0uPzyy7vjx49333777WrMrnvr+L+7N469251aMSshhBBCCCGEHwdbwngcPny4O++887r//M//PCP813/9V3fRRRd177333mrMrvvk5Gfd0y+82r382lurn4QQQgghhBC2OptuPPRo7Nq1q/vf//3fHxiPCnv27Ok+/fT74VX3Pfx0d9cDR1b/CiGEEEIIIWx1Nt14PP/889327dtHezwEvR6+++c//3l6vsf9Dz/T7d73l+7f73/U/x1CCCGEEELY2my68Thy5Ei3bdu2fk7HmPEQ9Ibcfvvt3cmTJ/tjHn7ihe7SXQe6R576R/93CCGEEEIIYWuz6cbjiSee6OdxzDMe//3f/91dcskl3bFjx/pjjjz7cnfBVXu7fXf8rft2sOpVCCGEEEIIYeuxLsbjm2++7b786uuzWmnKEKorr7xy5lCrCozJK6+80h/z5HOvdBfu2Ntd88c7uqPH3u0/CyGEEEIIIWxd1sV4HHvnve6JFTPw6htvd59/+dXqp9N4//33+7075k0uF371q191zz77bH/M0y/8q9u2Yjwu3rm/u//hp/vPQgghhBBCCFuX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" alt="Red dot" />
+                	    </div>
+            		</div>
+            	    </div>
+	        </div>
+
+	        <div t-attf-class="article o_report_layout_boxed o_company_#{company.id}_layout {{  'o_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' }});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            	    <div class="pt-5">
+	                <t t-call="web.address_layout"/>
+        	    </div>
+            	    <t t-out="0"/>
+	        </div>
+
+	        <div t-attf-class="footer o_boxed_footer o_company_#{company.id}_layout">
+                    <div class="text-center">
+                        <div class="text-center" style="line-height: 5px; margin-top: 7px">
+                            <p>www.fitnesshealth-iq.com</p>
+                            <p>info@fitnesshealth-iq.com</p>
+                            <p>IRAQ - BAGHDAD - Karradeh, 42 St - +964 770 007 6088</p>
+                        </div>
+                        <div t-if="report_type == 'pdf'">
+                            Page: <span class="page"/> / <span class="topage"/>
+                        </div>
+                    </div>
+                </div>
+	    </template>
+
+    	    <template id="fitness_invoice_template_report_view">
+		<t t-call="bi_print_journal_entries.external_layout_boxed_fhl">
+                <t t-set="o" t-value="o.with_context(lang=lang)"/>
+                <div class="page">
+                    <h5 style="margin-top:-50px">
+                        <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'"><b>INVOICE REF:</b></span>
+                        <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'"><b>INVOICE REF:</b></span>
+                        <span t-if="o.move_type == 'out_invoice' and o.state == 'cancel'"><b>INVOICE REF:</b></span>
+                        <span t-if="o.move_type == 'out_refund'"><b>INVOICE REF:</b></span>
+                        <span t-if="o.move_type == 'in_refund'"><b>INVOICE REF:</b></span>
+                        <span t-if="o.move_type == 'in_invoice'"><b>INVOICE REF:</b></span>
+                        <span t-if="o.name != '/'" t-field="o.name"/><br/><br/>
+			<b>INVOICE DATE:</b> <span t-field="o.invoice_date"/>
+                    </h5><br/>
+
+            <table style="width:100%;">
+                <thead>
+      		    <tr>
+      		        <td style="font-size:16px; padding:10px; border:1px solid;">CUSTOMER</td>
+      		        <td style="font-size:16px; padding:10px; border:1px solid;">INVOICE Contact</td>
+      		        <td style="font-size:16px; padding:10px; border:1px solid;">DELIVERY Contact</td>
+    		    </tr>
+     		    <tr>
+      			<td style="font-size:16px; padding:10px; border:1px solid;"><div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;mobile&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/></td>
+      			<td style="font-size:16px; padding:10px; border:1px solid;"><div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;mobile&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/></td>
+      			<td style="font-size:16px; padding:10px; border:1px solid;"><div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;mobile&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/></td>
+ 		    </tr>
+    	        </thead>
+     	    </table> <br/><br/>
+                    
+            <table style="width:100%;">
+                <thead>
+      		    <tr>
+      		        <td style="font-size:16px; padding:10px; border:1px solid;">REFERENCE</td>
+      		        <td style="font-size:16px; padding:10px; border:1px solid;">DUE Date</td>
+      		        <td style="font-size:16px; padding:10px; border:1px solid;">PAYMENT TERM</td>
+      		        <td style="font-size:16px; padding:10px; border:1px solid;">INCOTERM</td>
+      		        <td style="font-size:16px; padding:10px; border:1px solid;" t-if="o.print_customer_credit">CUSTOMER CREDIT</td>
+      		        <td style="font-size:16px; padding:10px; border:1px solid;" t-if="o.print_customer_credit">PREVIOUS CREDIT</td>
+    		    </tr>
+     		    <tr>
+      			<td style="font-size:16px; padding:10px; border:1px solid;"><span t-field="o.invoice_origin"/></td>
+      			<td style="font-size:16px; padding:10px; border:1px solid;"><span t-field="o.invoice_date_due"/></td>
+      			<td style="font-size:16px; padding:10px; border:1px solid;"><span t-field="o.invoice_payment_term_id"/></td>
+      			<td style="font-size:16px; padding:10px; border:1px solid;"><span t-field="o.invoice_incoterm_id"/></td>
+      			<td style="font-size:16px; padding:10px; border:1px solid;" t-if="o.print_customer_credit"><span t-field="o.customer_credit"/></td>
+                        <td style="font-size:16px; padding:10px; border:1px solid;" t-if="o.print_customer_credit"><span t-field="o.customer_credit_before"/></td>
+ 		    </tr>
+    	        </thead>
+     	    </table> <br/><br/>
+
+                    <t t-set="display_discount" t-value="any(l.discount for l in o.invoice_line_ids)"/>
+
+                    <table class="table table-sm o_main_table" name="invoice_line_table">
+                        <thead>
+                            <tr>
+                                <th name="th_description" class="text-center" style="white-space: nowrap;"><span>MODEL NUMBER</span></th>
+                                <th name="th_name" class="text-center" style="white-space: nowrap;"><span>PRODUCT NAME</span></th>
+                                <th name="th_quantity" class="text-center" style="white-space: nowrap;"><span>QTY</span></th>
+                                <th name="th_priceunit" style="white-space: nowrap;" t-attf-class="text-center {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>Unit Price</span></th>
+                                <th name="th_price_unit" style="white-space: nowrap;" t-attf-class="text-center {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>DIS</span></th>
+                                <!-- <th name="th_taxes" style="white-space: nowrap;" t-attf-class="text-center {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>Taxes</span></th> -->
+                                <th name="th_subtotal" class="text-center" style="white-space: nowrap;">
+                                    <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>
+                                    <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>
+                                </th>
+				<th class="text-center" style="white-space: nowrap;" width="15%">Image</th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <t t-set="current_subtotal" t-value="0"/>
+                            <t t-set="lines" t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+
+                            <t t-foreach="lines" t-as="line">
+                                <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+
+                                <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                                    <t t-if="not line.display_type" name="account_invoice_line_accountable">
+                                        <td name="account_invoice_line_number"><span t-field="line.product_id.default_code" t-options="{'widget': 'text'}"/></td>
+                                        <td name="account_invoice_line_name"><span t-field="line.name" t-options="{'widget': 'text'}"/></td>
+                                        <td class="text-right">
+                                            <span t-field="line.quantity"/>
+                                            <span t-field="line.product_uom_id" groups="uom.group_uom"/>
+                                        </td>
+                                        <td t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                            <span class="text-nowrap" t-field="line.price_unit"/>
+                                        </td>
+                                        <td t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                            <span class="text-nowrap" t-field="line.discount" t-options='{"widget": "float", "precision": 2}'/>
+                                        </td>
+                                        <!-- <td t-attf-class="text-left {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                            <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))" id="line_tax_ids"/>
+                                        </td> -->
+                                        <td class="text-right o_price_total">
+                                            <span class="text-nowrap" t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                            <span class="text-nowrap" t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                                        </td>
+					<td class="text-center"><img t-if="line.product_id.image_128" t-att-src="'data:image/png;base64,%s' % to_text(line.product_id.image_128)" style="width: 100%;height: 100%;"/></td>
+                                    </t>
+                                    <t t-if="line.display_type == 'line_section'">
+                                        <td colspan="99">
+                                            <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                        </td>
+                                        <t t-set="current_section" t-value="line"/>
+                                        <t t-set="current_subtotal" t-value="0"/>
+                                    </t>
+                                    <t t-if="line.display_type == 'line_note'">
+                                        <td colspan="99">
+                                            <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                        </td>
+                                    </t>
+                                </tr>
+
+                                <t t-if="current_section and (line_last or lines[line_index+1].display_type == 'line_section')">
+                                    <tr class="is-subtotal text-right">
+                                        <td colspan="99">
+                                            <strong class="mr16">Subtotal</strong>
+                                            <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <div class="clearfix">
+                        <div id="total" class="row">
+                            <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">
+                                <table class="table table-sm" style="page-break-inside: avoid;">
+
+                                    <!--Tax totals-->
+                                    <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
+                                    <t t-call="account.document_tax_totals"/>
+
+                                    <!--Payments-->
+                                    <t>
+                                        <t t-if="o.payment_state != 'invoicing_legacy'">
+                                            <t t-set="payments_vals" t-value="o.sudo()._get_reconciled_info_JSON_values()"/>
+                                            <t t-foreach="payments_vals" t-as="payment_vals">
+                                                <tr>
+                                                    <td>
+                                                        <i class="oe_form_field text-right oe_payment_label">Paid on <t t-esc="payment_vals['date']" t-options="{&quot;widget&quot;: &quot;date&quot;}"/></i>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <span t-esc="payment_vals['amount']" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                            <t t-if="len(payments_vals) &gt; 0">
+                                                <tr class="border-black">
+                                                    <td><strong>Amount Due</strong></td>
+                                                    <td class="text-right">
+                                                        <span t-field="o.amount_residual"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+		    <br/> <br/>
+                    <p t-if="o.move_type in ('out_invoice', 'in_refund') and o.payment_reference" name="payment_communication">
+                        Please use the following communication for your payment : <b><span t-field="o.payment_reference"/></b>
+                    </p>
+                    <div t-if="not is_html_empty(o.narration)" name="comment">
+                        <span t-field="o.narration"/>
+                    </div>
+                    <p t-if="not is_html_empty(o.fiscal_position_id.note)" name="note">
+                        <span t-field="o.fiscal_position_id.note"/>
+                    </p>
+                    <p t-if="o.invoice_incoterm_id" name="incoterm">
+                        <strong>Incoterm: </strong><span t-field="o.invoice_incoterm_id.code"/> - <span t-field="o.invoice_incoterm_id.name"/>
+                    </p>
+                    <div id="qrcode" t-if="o.display_qr_code and o.amount_residual &gt; 0">
+                        <p t-if="qr_code_urls.get(o.id)">
+                            <strong class="text-center">Scan me with your banking app.</strong><br/><br/>
+                            <img class="border border-dark rounded" t-att-src="qr_code_urls[o.id]"/>
+                        </p>
+                    </div>
+                </div>
+
+			</t>
+		</template>
+
+		<template id="fitness_invoice_template_id">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="bi_print_journal_entries.fitness_invoice_template_report_view"  t-lang="o.partner_id.lang"/>
+				</t>
+			</t>
+		</template>
+
+	</data>
+</odoo>

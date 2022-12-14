@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+    <record model="ir.ui.view" id="view_production_lot_form_inherit">
+        <field name="name">product.template.form</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="partner_id"/>
+                    <field name="partner_email"/>
+                    <field name="partner_phone"/>
+                    <field name="warranty_year"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="po_id"/>
+                    <field name="so_id"/>
+                    <field name="end_user_id"/>
+                    <field name="end_partner_id"/>
+                    <field name="installation_date"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_production_lot_tree_inherit" model="ir.ui.view">
+        <field name="name">stock.production.lot.tree</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="partner_id"/>
+            </xpath>
+        </field>
+    </record>
+            
+
+</data>
+</odoo>
